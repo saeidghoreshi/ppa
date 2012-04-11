@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="" />
+<title>PP</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="robots" content="">
+<link rel="stylesheet" href="css/general.css" type="text/css">
+<link rel="stylesheet" href="css/shops.css" type="text/css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="js/resizable-tables.js"></script>
+<!--[if IE 6]>
+	<script type="text/javascript" src="js/belatedpng.js"></script>
+	<script type="text/javascript">
+		DD_belatedPNG.fix('a.view_rec,span.add_annotation');
+	</script>
+<![endif]-->
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	/* mouseover and click events */
+	
+	var shops_list = $('#shops_list');
+	var shop_info = $('#shop_info');
+	
+	$('#shops_list a').bind({
+		click: function() {
+			if( ! $(this).hasClass('active-shop') ) {
+				
+				$('#shops_list a').removeClass('active-shop');
+				$(this).addClass('active-shop');
+				shops_list.addClass('disabled');
+				// shop_id = $(this).attr('id');
+				// ajax request here, response in html format
+				// $('#shop_info').html(htmlresponse);
+				if( shop_info.is(":visible") && ! $(this).hasClass('hovered') ) {
+					shop_info.slideUp();
+				}
+				shop_info.stop(true,true).slideDown();
+				
+			} else {
+				
+				$(this).removeClass('active-shop');
+				shops_list.removeClass('disabled');
+				shop_info.stop(true,true).slideUp();
+				
+			}
+			return false;
+		},
+		mouseover: function() {
+			if( ! shops_list.hasClass('disabled') ) {
+				$(this).addClass('hovered');
+				// shop_id = $(this).attr('id');
+				// ajax request here, response in html format
+				// $('#shop_info').html(htmlresponse);
+				shop_info.stop(true,true).slideDown();
+				
+			}
+		},
+		mouseout: function() {
+			if( ! shops_list.hasClass('disabled') ) {
+				$(this).removeClass('hovered');
+				shop_info.stop(true,true).slideUp();
+				
+			}
+		}
+	});
+	
+});
+</script>
+</head>
+<body> 
+<div id="wrap">
+	<div class="wrap">
+		
+		<div id="header" class="clearfix">
+			<h1 id="logo" class="linline">
+				<a href="#" title="PayPhoneApp">Payphoneapp.com</a>
+			</h1>
+			<div class="panel_controls rinline">
+				<a href="#">SignOut</a> | <a href="#">Settings</a> | <a href="#">Help</a>
+			</div>
+		</div>
+		
+		<div class="navigation">
+			<ul class="clearfix">
+				<li><a href="#">Overview</a></li>
+				<li><a href="#">Receipts</a></li>
+				<li><a href="#">Accounts</a></li>
+				<li><a href="#">Profile</a></li>
+				<li class="lower"><a href="#">Shops & Restaurants</a></li>
+			</ul>
+		</div>
+		<div class="line">&nbsp;</div>
+		
+		<div id="trans_wrap">
+			
+			<div class="custom_report clearfix">
+				<div class="rinline">
+					<form method="post" action="">
+						<input class="search_field" type="text" name="search" value="Search" />
+					</form>
+				</div>				
+			</div>
+			
+			<div class="line">&nbsp;</div>
+			
+			<div class="shops_wrap">
+				
+				<h2>Shops in<br />&nbsp;&nbsp;Your Area</h2>
+				
+				<div class="content clearfix">
+					<div class="linline">
+						<ul id="shops_list" class="shops_list clearfix">
+							<li><a id="shop-1" href="#">Nouvelle Nouvelle</a></li>
+							<li><a id="shop-2" href="#">One of a Few</a></li>
+							<li><a id="shop-3" href="#">Roden Gray</a></li>
+							<li><a id="shop-4" href="#">Prado Cafe</a></li>
+							<li><a id="shop-5" href="#">Two of a Few</a></li>
+							<li><a id="shop-6" href="#">Inventory</a></li>
+							<li><a id="shop-7" href="#">Sea Monstr Sushi</a></li>
+							<li><a id="shop-8" href="#">SubDivision</a></li>
+							<li><a id="shop-9" href="#">Sharks + Hammers</a></li>
+							<li><a id="shop-10" href="#">JD’s Barbarshop</a></li>
+							<li><a id="shop-11" href="#">Boneta</a></li>
+							<li><a id="shop-12" href="#">Nuba</a></li>
+							<li><a id="shop-13" href="#">Judas Goat</a></li>
+							<li><a id="shop-14" href="#">The Diamond</a></li>
+							<li><a id="shop-15" href="#">La Taqueria</a></li>
+							<li><a id="shop-16" href="#">Meat & Bread</a></li>
+							<li><a id="shop-17" href="#">Salty Tongue</a></li>
+							<li><a id="shop-18" href="#">Beat Street</a></li>
+							<li><a id="shop-19" href="#">Complex</a></li>
+							<li><a id="shop-20" href="#">Salt</a></li>
+							<li><a id="shop-21" href="#">Irish Heather</a></li>
+							<li><a id="shop-22" href="#">LiveStock</a></li>
+							<li><a id="shop-23" href="#">Save On Meats</a></li>
+							<li><a id="shop-24" href="#">Peckinpaws</a></li>
+							<li><a id="shop-25" href="#">Alife</a></li>
+							<li><a id="shop-26" href="#">The Block</a></li>
+							<li><a id="shop-27" href="#">Deakons Corner</a></li>
+						</ul>
+					</div>
+					<div class="rinline">
+						<div class="inner">
+							<img src="images/_1.jpg" height="276" width="277" alt="" />
+						</div>
+					</div>
+					<div class="clr"></div>
+				</div>
+				
+				<div id="shop_info" class="shop_info">
+					
+					<h3>Prado Cafe</h3>
+					
+					<ul class="shop_info_list">
+						<li class="column">
+							<ul>
+								<li>1938 Commercial D</li>
+								<li>Mon - Sat 7 - 8</li>
+								<li>Sun 8 - 8</li>
+								<li>603 255 5533 </li>
+							</ul>
+						</li>
+						<li class="column">
+							<ul>
+								<li>Organic Fair Trade Espresso and Baked Goods</li>
+								<li>&nbsp;</li>
+								<li>pradocafe.com</li>
+							</ul>
+						</li>
+						<li class="column">
+							<ul>
+								<li>More info if needed</li>
+							</ul>
+						</li>
+					</ul>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+<div id="bg-layer"></div>
+</body>
+</html>

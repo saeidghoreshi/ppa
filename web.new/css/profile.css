@@ -1,0 +1,10 @@
+.custom_report .linline { padding-left: 50px; }
+
+div.profile_info h2 { color: #44c7f5; font-size: 12px; font-weight: bold; letter-spacing: -1px; padding: 2px 0 2px 90px; text-transform: uppercase; }
+div.profile_info h3 { color: #44c7f5; font-size: 40px; letter-spacing: -1px; line-height: 40px; padding: 10px 0 10px 90px; text-transform: uppercase; }
+
+table.profile_info { width: 100%; }
+table.profile_info td { color: #666666; font-family: 'Helvetica Neue', Arial, Tahoma, sans-serif; font-size: 110%; padding: 10px; text-align: left; }
+table.profile_info td.right { color: #999999; font-family: 'Rockwell', Arial, Tahoma, sans-serif; font-size: 120%; text-align: right; width: 220px; }
+
+table.profile_info .dotted_line td { background: url(../images/trans_dotted_line.gif) repeat-x 0 50%; font-size: 0; line-height: 0; height: 20px; }

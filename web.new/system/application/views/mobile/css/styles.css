@@ -1,0 +1,481 @@
+body {
+	font: 100% Verdana, Arial, Helvetica, sans-serif;
+	background: #ffffff;
+	margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0;
+	text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #000000;
+}
+.oneColLiqCtr #container {
+	width: 80%;  /* this will create a container 80% of the browser width */
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	border: 0px solid #000000;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+}
+.oneColLiqCtr #mainContent {
+	padding: 0 20px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+}
+.style2 {	font-family: Arial, Helvetica, sans-serif;
+	color: #666666;
+}
+.style3 {color: #0066FF}
+.style1 {	font-size: xx-small;
+	color: #666666;
+}
+a:link {
+	text-decoration: none;
+	color: #666666;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+-->
+html {
+	margin-left: -1px;
+	overflow-Y: scroll;
+} /* background alignment fix */
+
+body
+{
+	color: #000;
+	padding: 0;
+	padding-bottom: 30px;
+	margin: 0;
+	font-family: Helvetica, sans-serif;
+	text-align: center;
+	background: #B4E4FA;
+}
+
+#wrapper-outer
+{
+	width: 480px;
+	margin: 0 auto;
+	background: url('../images/merchant-bg-bottom.png') bottom center no-repeat;
+	padding-bottom: 80px;
+}
+#wrapper-inner
+{
+	width: 342px;
+	margin: 0 auto;
+	padding: 0 70px 0 70px;
+	text-align: left;
+	background: url('../images/merchant-bg.png') top center repeat-y;
+}
+
+#header h1
+{
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
+}
+
+#nav
+{
+	position: relative;
+	padding: 20px 30px 20px 20px;
+	width: 382px;
+	margin: 0 -40px;
+}
+#nav a { display: block; }
+
+a, a:visited
+{
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+}
+img {border: 0; margin: 0; padding: 0;}
+
+a.button, a.button:visited
+{
+	background: #999999;
+	color: #000;
+	text-shadow: none;
+	border: none;
+	font-weight: bold;
+	text-decoration: none;
+	display: inline;
+	line-height: 1em;
+	padding: 5px 10px;
+	margin: 0;
+	font-size: 13px;
+}
+a.button:hover
+{
+	background: #ccc;
+}
+a.disabled, a.disabled:visited
+{
+	color: #555; background: #999; border-color: #aaa; text-shadow: 0 1px 0 #ccc;
+}
+
+h1, h2, h3
+{
+	font-family: "Trebuchet MS", sans-serif;
+	display: block;
+}
+
+.button, .print.button
+{
+	background: #01b0ef;
+	border: 1px outset #CDDDED;
+	padding: 6px;
+	margin: 10px 0;
+	color: #fff;
+	text-shadow: 0px -1px 0 #447;
+	font-weight: bold;
+	font-size: 14px;
+	text-decoration: none;
+}
+a.print.button:hover
+{
+	background: #0091C1;
+}
+table.form
+{
+	width: 320px;
+}
+
+input[type='text'], input[type='password']
+{
+	width: 200px;
+	border-radius: 5px;
+	padding: 8px;
+	font-size: 14px;
+}
+input:disabled
+{
+	color: #555; background: #999; border-color: #aaa; text-shadow: 0 1px 0 #ccc;
+}
+.waiting-user-input
+{
+	color: #9c9c9b !important;
+}
+
+.error
+{
+	color: #830404;
+	text-shadow: 0px 1px 0 #fdd;
+	background: #E7C3A7;
+	padding: 10px;
+	width: 240px;
+	margin: 5px auto;
+	border-radius: 5px;
+}
+.message
+{
+	color: #404C3F;
+	text-shadow: 0px 1px 0 #dfd;
+	background: #C9EDC5;
+	padding: 10px;
+	width: 240px;
+	margin: 10px auto;
+	border-radius: 5px;
+}
+.info
+{
+	color: #999;
+}
+
+.dollars
+{
+}
+
+#instructions
+{
+	text-align: left;
+	margin-bottom: 25px;
+}
+
+table.list
+{
+	text-align: left;
+	border-radius: 5px;
+	background: #DCE8FF;
+	padding: 10px;
+	margin: 0 auto;
+	color: #2A435F;
+	border-spacing: 0;
+	width: 95%;
+}
+table.list th
+{
+	color: #7B8CA7;
+	padding: 5px;
+	font-weight: normal;
+	width: 20px;
+}
+table.list td
+{
+	padding: 5px;
+	background: #E9F3FF;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #C0C6E5;
+}
+table.list td.left
+{
+	border-left: 1px solid #fff;
+}
+table.list td.right
+{
+	border-right: 1px solid #C0C6E5;
+}
+
+
+
+
+#topbar
+{
+	text-align: center;
+	position: relative;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cdd5df), color-stop(3%, #b0bccd), color-stop(50%, #889bb3), color-stop(51%, #8195af), color-stop(97%, #6d84a2), to(#2d3642));
+	padding: 10px;
+	color: #fff;
+	text-shadow: 0px -1px 0 #444;
+	font-size: 20px;
+	font-weight: bold;
+}
+#topbar #leftnav
+{
+	position: absolute;
+	font-size: 14px;
+	top: 9px;
+	left: 5px;
+	z-index: 2;
+	-webkit-border-image: url("../images/iwebkit/navleft.png") 0 5 0 13;
+	border-width: 0 5px 0 13px;
+	-webkit-border-top-left-radius: 16px;
+	-webkit-border-bottom-left-radius: 16px;
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	width: auto;
+}
+#topbar #leftnav a, #topbar #leftnav a:visited
+{
+	color: #fff;
+	padding: 5px;
+	height: 18px;
+	display: block;
+}
+
+#topbar #rightnav
+{
+	position: absolute;
+	font-size: 14px;
+	top: 9px;
+	right: 5px;
+	z-index: 2;
+	-webkit-border-image: url("../images/iwebkit/navbutton.png") 0 5 0 5;
+	border-width: 0 5px;
+	-webkit-border-radius: 6px;
+	width: auto;
+}
+#topbar #rightnav a, #topbar #rightnav a:visited
+{
+	color: #fff;
+	padding: 5px;
+	height: 18px;
+	display: block;
+}
+
+
+ul.list
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	text-align: left;
+	list-style: none;
+	background: #fff;
+}
+ul.list li a, ul.list li a:visited
+{
+	display: block;
+	list-style: none;
+	padding: 5px 10px;
+	margin: 0;
+	border-bottom: 1px solid #aaa;
+	background: url('../images/arrow-circle-small.png') center right no-repeat;
+	background-size: 35px 30px;
+}
+ul.list .price
+{
+	color: #000;
+	font-size: 25px;
+}
+ul.list .merchant, ul.list .date
+{
+	color: #666;
+	font-size: 13px;
+	line-height: 16px;
+}
+
+ol { text-align: left; padding-left: 25px; }
+ol li { margin: 0px; }
+
+#payment-status
+{
+	margin: 20px 0;
+	height: 150px;
+}
+table.payment-status
+{
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 30px;
+}
+table.payment-status td, table.payment-status th
+{
+	padding: 5px;
+}
+
+#sort-dialog
+{
+	display: none;
+	width: 280px;
+	border-bottom: 2px solid #000;
+	background: rgba(0,0,0,0.8);
+	position: absolute;
+	top: 44px;
+	left: 0;
+	z-index: 1000;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	padding: 20px;
+}
+#sort-dialog a, #sort-dialog a:visited
+{
+	display: block;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#DFDFDF), color-stop(3%, #CDCDCD), color-stop(50%, #cccccc), color-stop(51%, #AFAFAF), color-stop(97%, #979797), to(#3C3C3C));
+	border-radius: 10px;
+	margin: 10px;
+	padding: 10px;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+}
+
+#receipt-wrapper
+{
+	min-height: 460px;
+	position: relative;
+	background: #E0E0E0;
+}
+#receipt
+{
+	padding: 10px 35px;
+	text-align: center;
+	font-family: monospace;
+	position: relative;
+}
+#receipt table
+{
+	text-align: left;
+	width: 100%;
+}
+#receipt .total
+{
+	font-weight: bold;
+}
+#annotate-dialog { margin: 10px 0; }
+#annotate-dialog textarea
+{
+	border: 1px solid #555;
+	border-radius: 10px;
+	background: #efefef;
+	width: 240px;
+	height: 50px;
+}
+#bottombar
+{
+	text-align: center;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cdd5df), color-stop(3%, #b0bccd), color-stop(50%, #889bb3), color-stop(51%, #8195af), color-stop(97%, #6d84a2), to(#2d3642));
+	color: #fff;
+	text-shadow: 0px -1px 0 #444;
+	font-size: 20px;
+	font-weight: bold;
+}
+#bottombar table { width: 100%; }
+#bottombar a, #bottombar a:visited { color: #fff; }
+
+
+#merchant-transactions { position: relative; }
+#print-dialog
+{
+	color: #fff;
+	display: none;
+	position: fixed;
+	top: 35%;
+	z-index: 1000;
+	background: #29486C;
+	width: 240px;
+	padding: 40px 30px;
+	margin: 0 10px;
+	border-radius: 10px;
+}
+#print-button 
+{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	color: #fff;
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+	background: #999999;
+}
+#print-button a.button, #print-button a.button:visited
+{
+	background: #01b0ef;
+	color: #fff;
+}
+#print-button a.button:hover { background: #0091C1; }
+
+.success { color: #3f3; font-weight: bold; }
+.cancelled { color: #f33 !important; font-weight: bold; }
+.cancel { background: #f33 !important; }
+.warning { color: #a00 !important; font-weight: bold; }
+.clear { clear: both; }
+.align-right { text-align: right; }
+.float-left { float: left; }
+.float-right { float: right; }
+.center { text-align: center; }
+
+input.date-pick {
+	width: 100px;
+	padding: 5px;
+}
+a.dp-choose-date {
+	float: left;
+	width: 16px;
+	height: 16px;
+	padding: 0;
+	margin: 5px 3px 0;
+	display: block;
+	text-indent: -2000px;
+	overflow: hidden;
+	background: url('../images/calendar.png') no-repeat;
+}
+a.dp-choose-date.dp-disabled {
+	background-position: 0 -20px;
+	cursor: default;
+}
+/* makes the input field shorter once the date picker code
+ * has run (to allow space for the calendar icon
+ */
+input.dp-applied {
+	width: 140px;
+	float: left;
+}

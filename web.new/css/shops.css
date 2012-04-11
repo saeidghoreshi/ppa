@@ -1,0 +1,25 @@
+.custom_report .rinline { padding: 5px 0 5px 0; }
+
+.search_field { -webkit-border-radius: 3px; -moz-border-radius: 5px; border-radius: 3px; border: 2px solid #e6e7e8; font-size: 11px; height: 18px; line-height: 18px; padding: 0 2px; }
+
+.shops_wrap h2 { color: #44c7f5; font-size: 40px; letter-spacing: -1px; line-height: 35px; padding: 10px 0; }
+
+.shops_wrap { /*padding: 0 80px 100px 30px;*/ }
+
+.content { background: url(../images/trans_tr_bg.gif) repeat-x 0 100%; overflow: hidden; padding-right: 350px; }
+.content .linline { padding: 20px 0 20px; width: 100%; }
+.content .rinline { background: url(../images/trans_td_bg.gif) repeat-y 0 0; margin-bottom: -9999em; margin-right: -350px; padding-bottom: 9999em; width: 350px; }
+.content .rinline .inner { background: url(../images/trans_tr_bg.gif) repeat-x 0 0; padding: 10px; height: 300px; width: 350px; }
+
+.shops_list { padding-left: 15px; }
+.shops_list li { float: left; width: 150px; padding-right: 20px; }
+.shops_list a { color: #44c7f5; /*font-weight: bold;*/ font-size: 115%; }
+
+.shop_info { color: #636363; padding: 0; display: none;}
+.shop_info h3 { font-weight: bold; padding-bottom: 40px; }
+.info { min-height: 150px; overflow: auto; }
+
+.shop_info_list li.column { float: left; overflow: hidden; width: 33%; }
+.shop_info_list li li { line-height: 18px; width: 90%; }
+
+input.search_field { width: 160px; }

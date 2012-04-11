@@ -1,0 +1,256 @@
+<link rel="stylesheet"
+      href="{$config.base_url}css/receipt.css" type="text/css" />
+<script src="{$config.base_url}js/receipt.js"
+        type="text/javascript"></script>
+<input type="hidden" id="currentPageTab" name="currentPageTab" value="h_transaction">
+{if $transactions}
+    <div id="trans_wrap">
+        <div class="custom_report">
+            <a class="custom_button" href="{$uri_string}#">
+            <span>
+                Custom Report&nbsp;
+                <img src="images/icon_plus.png" height="11" width="11" alt="" />
+            </span>
+            </a>
+        </div>
+        <table id="transaction_list" class="resizable">
+            <tr>
+                <th class="date{if $column == $smarty.const.TRANSACTION_ORDERBY_DATE} sort{/if}">
+                    <a href="{$site_url}/transaction/index/{$smarty.const.TRANSACTION_ORDERBY_DATE}/5/{$descend}">
+                    Date&nbsp;{if $column == $smarty.const.TRANSACTION_ORDERBY_DATE}<img src="images/icon_sort.gif" alt="" />{/if}
+                    </a>
+                </th>
+                <th class="trans{if $column == $smarty.const.TRANSACTION_ORDERBY_ID} sort{/if}">
+                    <a href="{$site_url}/transaction/index/{$smarty.const.TRANSACTION_ORDERBY_ID}/5/{$descend}">
+                    Trans #&nbsp;{if $column == $smarty.const.TRANSACTION_ORDERBY_ID}<img src="images/icon_sort.gif" alt="" />{/if}
+                    </a>
+                </th>
+                <th class="time{if $column == $smarty.const.TRANSACTION_ORDERBY_TIME} sort{/if}">
+                    <a href="{$site_url}/transaction/index/{$smarty.const.TRANSACTION_ORDERBY_TIME}/5/{$descend}">
+                    Time&nbsp;{if $column == $smarty.const.TRANSACTION_ORDERBY_TIME}
+                    <img src="images/icon_sort.gif" alt="" />
+                    {/if}
+                    </a>
+                </th>
+                <th class="merch{if $column == $smarty.const.TRANSACTION_ORDERBY_MERCHANT} sort{/if}">
+                    <a href="{$site_url}/transaction/index/{$smarty.const.TRANSACTION_ORDERBY_MERCHANT}/5/{$descend}">
+                    Merchant&nbsp;{if $column == $smarty.const.TRANSACTION_ORDERBY_MERCHANT}
+                    <img src="images/icon_sort.gif" alt="" />
+                    {/if}
+                    </a>
+                </th>
+                <th class="ann{if $column == $smarty.const.TRANSACTION_ORDERBY_NOTE} sort{/if}">
+                    <a href="{$site_url}/transaction/index/{$smarty.const.TRANSACTION_ORDERBY_NOTE}/5/{$descend}">
+                    Annotation&nbsp;{if $column == $smarty.const.TRANSACTION_ORDERBY_NOTE}
+                    <img src="images/icon_sort.gif" alt="" />
+                    {/if}
+                    </a>
+                </th>
+                <th class="status{if $column == $smarty.const.TRANSACTION_ORDERBY_STATUS} sort{/if}">
+                    <a href="{$site_url}/transaction/index/{$smarty.const.TRANSACTION_ORDERBY_STATUS}/5/{$descend}">
+                    Status&nbsp;{if $column == $smarty.const.TRANSACTION_ORDERBY_STATUS}
+                    <img src="images/icon_sort.gif" alt="" />
+                    {/if}
+                    </a>
+                </th>
+                <th class="amount{if $column == $smarty.const.TRANSACTION_ORDERBY_AMOUNT} sort{/if}">
+                    <a href="{$site_url}/transaction/index/{$smarty.const.TRANSACTION_ORDERBY_AMOUNT}/5/{$descend}">
+                    Amount&nbsp;{if $column == $smarty.const.TRANSACTION_ORDERBY_AMOUNT}<img src="images/icon_sort.gif" alt="" />{/if}
+                    </a>
+                </th>
+                <th class="account{if $column == $smarty.const.TRANSACTION_ORDERBY_ACCOUNT} sort{/if}">
+                    <a href="{$site_url}/transaction/index/{$smarty.const.TRANSACTION_ORDERBY_ACCOUNT}/5/{$descend}">
+                    Account&nbsp;{if $column == $smarty.const.TRANSACTION_ORDERBY_ACCOUNT}
+                    <img src="images/icon_sort.gif" alt="" />
+                    {/if}
+                    </a>
+                </th>
+                <th class="flag{if $column == $smarty.const.TRANSACTION_ORDERBY_FLAG} sort{/if}">
+                    <a href="{$site_url}/transaction/index/{$smarty.const.TRANSACTION_ORDERBY_FLAG}/5/{$descend}">
+                    <img src="images/icon_trans_flag.gif" alt="" />
+                    &nbsp;
+                    {if $column == $smarty.const.TRANSACTION_ORDERBY_FLAG}
+                    <img src="images/icon_sort.gif" alt="" />
+                    {/if}
+                    </a>
+                </th>
+                <th class="view">&nbsp;</th>
+            </tr>
+            <tr>
+                <td class="line" colspan="10">&nbsp;</td>
+            </tr>
+            {foreach from=$transactions item=t name=transaction}
+            <tr id="trans-show-{$smarty.foreach.transaction.iteration}">
+                <td>
+                    {*<input type="checkbox" value="1" checked />*}
+                    <span class="data-1">{$t.transaction_date_paid}</span>
+                </td>
+                <td><span class="data-2">{$t.transaction_id}</span></td>
+                <td><span class="data-3">{$t.transaction_time_paid}</span></td>
+                <td class="bold">
+                    <span class="data-4">{$t.merchant_name}</span>
+                </td>
+                <td class="ann">
+                    <div class="annw">
+                        <span class="data-5">{$t.transaction_user_note}</span>
+                        <span id="ann-id-{$smarty.foreach.transaction.iteration}"
+                              class="add_annotation" title="Add Annotation">
+                            Add Annotation
+                        </span>
+                    </div>
+                </td>
+                <td class="bold">
+                    <span class="data-6">
+                        {if $t.transaction_paid}
+                        PAID
+                        {elseif $t.transaction_cancelled}
+                        CANCELED
+                        {/if}
+                    </span>
+                </td>
+                <td>
+                    <span class="data-7">${$t.transaction_amount|number_format:2:".":","}</span>
+                </td>
+                <td><span class="data-8">{$t.account_name}</span></td>
+                <td>
+                    {if $t.transaction_flagged}
+                    <img src="images/icon_trans_flag.gif" alt="" />
+                    {/if}
+                    <input type="hidden" name="flag" value="{$t.transaction_flagged}">
+                    <input type="hidden" name="transId" value="{$t.transaction_id}">
+                    <input type="hidden" name="merchant_address" class="data-9" value="{$t.merchant_street|default:'n/a'}, {$t.merchant_city|default:'n/a'}">
+                    <input type="hidden" name="transaction_account" class="data-10" value="{$t.account_number|default:'n/a'}">
+                    <input type="hidden" name="transaction_paid" class="data-11" value="{$t.transaction_paid|default:'n/a'}">
+                    <input type="hidden" name="transaction_location" class="data-12" value="{if $t.transaction_location}Verified{else}Failed{/if}">
+                    <input type="hidden" name="transaction_subtotal" class="data-13" value="${$t.transaction_subtotal|default:'n/a'}">
+                    <input type="hidden" name="transaction_tax" class="data-14" value="${$t.transaction_tax|default:'n/a'}">
+                    <input type="hidden" name="transaction_tips" class="data-15" value="${$t.transaction_tips|default:'n/a'}">
+                </td>
+                <td><a class="view_rec" href="{$uri_string}#" title="View Receipt">View Receipt</a></td>
+            </tr>
+            {/foreach}
+            <tr id="trans-receipts-row" class="trans-receipts-row even">
+                <td class="trans-col" colspan="10">
+                    <div id="trans-receipts" class="trans-receipts">
+                        <table class="receipt_item" border="0">
+                            <tr>
+                                <td id="data-4" class="title" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td id="data-9" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td id="data-3" class="right"></td>
+                                <td id="data-1" class="left"></td>
+                            </tr>
+                            <tr>
+                                <td class="blank" colspan="2">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>Trans&nbsp;#</td>
+                                <td id="data-2" class='align-right'></td>
+                            </tr>
+                            <tr>
+                                <td>Paid with:</td>
+                                <td id="data-8" class='align-right'></td>
+                            </tr>
+                            <tr>
+                                <td>ACCT:</td>
+                                <td id="data-10" class='align-right'></td>
+                            </tr>
+                        {if false}
+                            <tr>
+                                <td>Confirmation:</td>
+                                <td id="data-11" class="right"></td>
+                            </tr>
+                        {/if}
+                            <tr>
+                                <td>Location status:</td>
+                                <td id="data-12" class='align-right'></td>
+                            </tr>
+                            <tr>
+                                <td>Paid:</td>
+                                <td id="data-6" class='align-right'>
+                                    <span class='cancelled'></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blank" colspan="2">&nbsp;</td>
+                            </tr>
+                            {if false}
+                            <tr>
+                                <td>Americano 8oz</td>
+                                <td class="right">
+                                    e.g. $(2.10)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cream Muffin</td>
+                                <td class="right">
+                                    e.g. $(2.25)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="blank" colspan="2">&nbsp;</td>
+                            </tr>
+                            {/if}
+                            <tr>
+                                <td class="right">Sub Total</td>
+                                <td id="data-13" class="right"></td>
+                            </tr>
+                            <tr>
+                                <td class="right">HST 12%</td>
+                                <td id="data-14" class="right"></td>
+                            </tr>
+                            <tr>
+                                <td class="right">Tips</td>
+                                <td id="data-15" class="right"></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td class='align-right'></td>
+                            </tr>
+                            <tr style="font-weight: bold">
+                                <td class="right">
+                                    <strong>Total</strong>
+                                </td>
+                                <td id="data-7" class="right">
+                                    <strong></strong>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="recann">
+                                    <span class="add_annotation ann_rec"
+                                          title="Add Annotation">
+                                        Add Annotation
+                                    </span>
+                                </td>
+                                <td id="data-5" class="recann"></td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="end" colspan="10">
+                    <span class="custom_button custom_button_blue">
+                        <span>
+                            <a href="javascript:window.print();">Print</a>&nbsp;|&nbsp;
+{if false}
+                            <a href="{$uri_string}#">Save</a>&nbsp;|&nbsp;
+                    <a href="{$uri_string}#">Export</a>
+{/if}
+                        </span>
+                    </span>
+                </td>
+            </tr>
+        </table>
+        <div id="annotation_field">
+            <input type="text" value="" />
+        </div>
+    </div>
+{else}
+    You currently have no receipts.
+{/if}
+

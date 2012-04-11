@@ -1,0 +1,44 @@
+[
+	{
+		"message_id":"1",
+		"merchant_id":"16",
+		"message_headline":"Seminar on Sherry Wines",
+		"message_title":"The Cellar at Salt Tasting Room",
+		"message_text":"You are cordially invited to join the staff of Salt as we continue to explore the world of sherry",
+		"date_start":"2011-06-04 00:00:00",
+		"date_end":"2011-06-04 00:00:00",
+		"user_id":"0",
+		"merchant_name":"Salt Tasting Room",
+		"message_date":"June 4th 2011",
+		"latitude":"49.283035",
+		"longitude":"-123.105372"
+	},
+	{
+		"message_id":"2",
+		"merchant_id":"5",
+		"message_headline":"Lunch Special",
+		"message_title":"Ahi Tuna, Miso Soup, Chicken Terri Bowl",
+		"message_text":"Ahi Tuna, Miso Soup, Chicken Terri Bowl",
+		"date_start":"0000-00-00 00:00:00",
+		"date_end":"0000-00-00 00:00:00",
+		"user_id":"0",
+		"merchant_name":"Sea Monstr Sushi",
+		"message_date":"Today Only",
+		"latitude":"49.2833",
+		"longitude":"-123.10289"
+	},
+	{
+		"message_id":"3",
+		"merchant_id":"1",
+		"message_headline":"30% OFF One Day Sale",
+		"message_title":"Gastown Shop Hop and One Day Sale",
+		"message_text":"30% OFF Everything!!!\r\nSale 11am-10pm\r\nDrinks 5pm - 10pm",
+		"date_start":"0000-00-00 00:00:00",
+		"date_end":"0000-00-00 00:00:00",
+		"user_id":"0",
+		"merchant_name":"Nouvelle Nouvelle",
+		"message_date":"Today Only",
+		"latitude":"49.28368",
+		"longitude":"-123.106527"
+	}
+]
