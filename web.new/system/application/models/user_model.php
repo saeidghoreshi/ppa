@@ -269,14 +269,14 @@ class User_model extends Ppa_model
      */
     public function update($user_id = null, $data = null)
     {
-        $user_data = array(
-            USER_FIRSTNAME => $data[FORM_FIRSTNAME],
-            USER_LASTNAME => $data[FORM_LASTNAME],
-            USER_PREFIX => $data[FORM_PREFIX],
-            USER_DOB => $data[FORM_DOB],
-            USER_EMAIL => $data[FORM_EMAIL],
-            USER_PHONE => $data[FORM_PHONE]
-        );
+		if( !empty($data[FORM_FIRSTNAME]) ) $user_data['USER_FIRSTNAME'] = $data[FORM_FIRSTNAME];
+		if( !empty($data[FORM_LASTNAME]) ) $user_data['USER_LASTNAME'] = $data[FORM_LASTNAME];
+		if( !empty($data[FORM_PREFIX]) ) $user_data['USER_PREFIX'] = $data[FORM_PREFIX];
+		if( !empty($data[FORM_DOB]) ) $user_data['USER_DOB'] = $data[FORM_DOB];
+		if( !empty($data[FORM_EMAIL]) ) $user_data['USER_EMAIL'] = $data[FORM_EMAIL];
+		if( !empty($data[FORM_PHONE]) ) $user_data['USER_PHONE'] = 	$data[FORM_PHONE];
+		if( !empty($data['paypal_key']) ) $user_data['paypal_key'] = $data['paypal_key'];
+		if( !empty($data['paypal_id']) ) $user_data['paypal_id'] = $data['paypal_id'];
 
         parent::update($user_id, $user_data);
     }

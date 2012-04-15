@@ -16,6 +16,9 @@ $(document).ready(function(){
             if( value == '10' ) {
                 $('#paymethod-2').show(700);
             }
+            else if( value == '9' ) {
+                location.href = 'index.php/account/paypal/step2';
+            }
             else {
                 $('#paymethod-1').show(700);
             }

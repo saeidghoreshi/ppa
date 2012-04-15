@@ -3,6 +3,11 @@
 todo: check input varaibles: transaction_id, user_enabled, logged_in
 check access restrictions
 */
+
+//error_reporting(0);
+
+error_reporting(E_ERROR | E_PARSE);
+
 date_default_timezone_set("America/Los_Angeles");
 setlocale(LC_MONETARY, 'en_US');
 
@@ -166,6 +171,11 @@ switch($action)
             $ret = array('status'=>'Error', 'msg'=>'GC Payment did not go through');
           }
       }
+      if( !empty($in['account_type']) && $in['account_type'] == 9 ) {
+          // Paypal
+			$ret = paypal_push($in);
+            //$ret['status'] = 'OK';
+      }
       else {
           // Regular CC Payment
           $ret = payment_push($in);
@@ -234,6 +244,91 @@ exit;
 
 
 <?php
+
+  function paypal_push($in,$mode='')
+  {
+      if(empty($in['trnOrderNumber']) || empty($in['trnAmount']) || empty($in['customerCode']))
+      {
+            return array('status'=>'Error','msg'=>'Make sure all payment transaction parameters(trnOrderNumber, trnAmount, customerCode) provided');
+      }
+	  
+	  require_once 'system/application/libraries/paypal/AdaptiveAccounts.php';
+	  require_once 'system/application/libraries/paypal/Stub/AA/AdaptiveAccountsProxy.php';
+	  require_once 'system/application/libraries/paypal/AdaptivePayments.php';
+	  
+			try {
+		           $returnURL = "http://www.payphoneapp.com/PaymentDetails.php";
+		           $cancelURL = "http://www.payphoneapp.com/SetPay.php";
+		           $currencyCode='CAD';
+		           $email='ddvinyaninov2@gmail.com';
+				   $preapprovalKey = 'PA-0K511738XC6922641';	
+		           $receiverEmail='noah2@payphoneapp.com';
+		           $amount=$in['trnAmount'];
+				   
+		            $payRequest = new PayRequest();
+		            $payRequest->actionType = "PAY";
+					$payRequest->cancelUrl = $cancelURL ;
+					$payRequest->returnUrl = $returnURL;
+					$payRequest->clientDetails = new ClientDetailsType();
+					$payRequest->clientDetails->applicationId ="APP-1JE4291016473214C";
+		           	$payRequest->clientDetails->deviceId = DEVICE_ID;
+		           	$payRequest->clientDetails->ipAddress = "127.0.0.1";
+		           	$payRequest->currencyCode = $currencyCode;
+		           	$payRequest->senderEmail = $email;
+		           	$payRequest->requestEnvelope = new RequestEnvelope();
+		           	$payRequest->requestEnvelope->errorLanguage = "en_US";
+		           	if($preapprovalKey != "")
+		           	{
+		           		$payRequest->preapprovalKey = $preapprovalKey ;
+		           	}          	
+		           	$receiver1 = new receiver();
+		           	$receiver1->email = $receiverEmail;
+		           	$receiver1->amount = $amount;
+
+					$payRequest->receiverList = new ReceiverList();
+		           	$payRequest->receiverList = array($receiver1);
+		           	
+		           $ap = new AdaptivePayments();
+		           $response=$ap->Pay($payRequest);
+		           
+		           if(strtoupper($ap->isSuccess) == 'FAILURE')
+					{
+						$_SESSION['FAULTMSG']=$ap->getLastError();
+						$location = "APIError.php";
+						//header("Location: $location");
+						return array('status'=>'Error','msg'=>$ap->getLastError()->error->message);
+					}
+					else
+					{
+						$_SESSION['payKey'] = $response->payKey;
+						if($response->paymentExecStatus == "COMPLETED")
+						{
+							$location = "PaymentDetails.php";
+							//header("Location: $location");
+							return array('status'=>'OK');
+						}
+						else
+						{
+							$token = $response->payKey;
+							$payPalURL = PAYPAL_REDIRECT_URL.'_ap-payment&paykey='.$token;
+		                    //header("Location: ".$payPalURL);
+							return array('status'=>'Error','msg'=>'paymentExecStatus is not COMPLETED');
+						}
+					}
+			}
+			catch(Exception $ex) {
+				
+				$fault = new FaultMessage();
+				$errorData = new ErrorData();
+				$errorData->errorId = $ex->getFile() ;
+  				$errorData->message = $ex->getMessage();
+		  		$fault->error = $errorData;
+				$_SESSION['FAULTMSG']=$fault;
+				$location = "APIError.php";
+				//header("Location: $location");
+				return array('status'=>'Error','msg'=>'paypal error2');
+			}
+  }
 
   function payment_push($in,$mode='')
   {

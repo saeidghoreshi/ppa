@@ -55,10 +55,10 @@ class Address_model extends Ppa_model
      *
      * @return    row array
      */
-    public function get_by_user($user_id = '')
+    public function get_by_user($user_id = '', $address_type = TYPE_ADDRESS_PROFILE)
     {
         $query = parent::get_where(array(USER_ID => $user_id,
-            ADDRESS_TYPE => TYPE_ADDRESS_PROFILE));
+            ADDRESS_TYPE => $address_type));
 
         return $query->row_array();
     }

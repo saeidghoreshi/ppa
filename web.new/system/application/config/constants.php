@@ -72,6 +72,7 @@ define('ACCOUNT_BALANCE', 'account_balance');
 define('ACCOUNT_TYPE', 'account_type');
 define('ACCOUNT_NAME', 'account_name');
 define('ACCOUNT_ENABLED', 'account_enabled');
+define('PAYMENT_GATEWAY', 'payment_gateway');
 
 define('ACCOUNT_FIRSTNAME', 'account_firstname');
 define('ACCOUNT_LASTNAME', 'account_lastname');
@@ -248,6 +249,8 @@ define('TYPE_ACCOUNT_AMEX', 3);
 define('TYPE_ACCOUNT_VISA_STR', 'Visa');
 define('TYPE_ACCOUNT_BANK', 10);
 define('TYPE_ACCOUNT_BANK_STR', 'Bank Account');
+define('TYPE_ACCOUNT_PAYPAL', 9);
+define('TYPE_ACCOUNT_PAYPAL_STR', 'Bank Account');
 
 /*
 |--------------------------------------------------------------------------
@@ -256,6 +259,7 @@ define('TYPE_ACCOUNT_BANK_STR', 'Bank Account');
 */
 define('TYPE_ADDRESS_PROFILE', 'profile');
 define('TYPE_ADDRESS_BILLING', 'billing');
+define('TYPE_ADDRESS_PAYPAL', 'paypal');
 
 /*
 |--------------------------------------------------------------------------

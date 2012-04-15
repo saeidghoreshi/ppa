@@ -9,7 +9,7 @@
  * @filesource          system/application/controllers/beanstream.php
  */
 
-require_once(APPPATH . 'libraries/Ppa_controller.php');
+//require_once(APPPATH . 'libraries/Ppa_controller.php');
 
 class Beanstream extends Ppa_controller {
     

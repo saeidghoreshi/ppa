@@ -1,6 +1,6 @@
 <?php
 
-require_once(APPPATH.'libraries/Ppa_controller.php');
+//require_once(APPPATH.'libraries/Ppa_controller.php');
 
 /**
  * Controller for Transaction related actions.
@@ -257,11 +257,11 @@ class Transaction extends Ppa_controller
             $order_by = TRANSACTION_ORDERBY_DATE;
         }
 
-        // --------------------------------------------------------------------
+		// --------------------------------------------------------------------
         // REQUEST TYPE: AJAX (PHONEGAP CLIENT)
         // --------------------------------------------------------------------
-//echo var_dump($transactions);
-        if ($is_ajax)
+
+		if ($is_ajax)
         {
             // Get all transactions and order by default column (created date)
             $this->handle_ajax_request(AJAX_HTTP_200, $transactions);

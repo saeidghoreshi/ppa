@@ -30,7 +30,7 @@ class Transaction_model extends Ppa_model
     public function get_order_by($user_email = null, $account_id = null,
         $order_by = array(), $descend = true, $limit = 0, $mode = 'user')
     {
-        if (empty($user_email))
+		if (empty($user_email))
         {
             return false;
         }
@@ -39,7 +39,7 @@ class Transaction_model extends Ppa_model
                 LEFT JOIN merchant m ON m.merchant_id = u.merchant_id
                 WHERE u.user_email = ?";
 
-        $query = parent::query($sql_query, array($user_email));
+		$query = parent::query($sql_query, array($user_email));
 
         if ($query->num_rows() > 0)
         {

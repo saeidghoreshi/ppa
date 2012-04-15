@@ -40,23 +40,23 @@ class Account_model extends Ppa_model
                     ACCOUNT_INSTITUTION => $data[FORM_ACCOUNT_INSTITUTION]
                 );
             }
-            // Otherwise, Type of Account is Visa (for now only two types)
+            // Otherwise, Type of Account is Visa or Paypal
             else
             {
                 // Construct expiry date from year and month form fields
-                $expiry_date =
-                    '20' . $data[FORM_ACCOUNT_EXPIRY_YEAR] .
-                    '-' .
-                    $data[FORM_ACCOUNT_EXPIRY_MONTH] .
-                    '-01';
-
+				if( !empty( $data[FORM_ACCOUNT_EXPIRY_YEAR]) AND !empty($data[FORM_ACCOUNT_EXPIRY_MONTH]) )
+				{
+					$data[FORM_ACCOUNT_EXPIRY] = '20' . $data[FORM_ACCOUNT_EXPIRY_YEAR] . '-' . $data[FORM_ACCOUNT_EXPIRY_MONTH] . '-01';
+				}
+				
                 $account_data = array(
                     ACCOUNT_NAME => $data[FORM_ACCOUNT_NICKNAME],
                     ACCOUNT_NUMBER => $data[FORM_ACCOUNT_CREDITCARDNUMBER],
-                    ACCOUNT_EXPIRY => $expiry_date,
-                    ACCOUNT_SECURITY_NUMBER => md5($data[FORM_ACCOUNT_SECURITY_NUMBER]),
+                    ACCOUNT_EXPIRY => $data[FORM_ACCOUNT_EXPIRY],
                     ACCOUNT_SECURITY_PIN => md5($data[FORM_ACCOUNT_SECURITY_PIN])
                 );
+				
+				$account_data[ACCOUNT_SECURITY_NUMBER] = md5($data[FORM_ACCOUNT_SECURITY_NUMBER]);
             }
 
             // Now add the fields that are common to all account types
@@ -66,6 +66,7 @@ class Account_model extends Ppa_model
             $account_data[ACCOUNT_FIRSTNAME] = $data[FORM_FIRSTNAME];
             $account_data[ACCOUNT_LASTNAME] = $data[FORM_LASTNAME];
             $account_data[ACCOUNT_PREFIX] = $data[FORM_PREFIX];
+            $account_data[PAYMENT_GATEWAY] = $data[PAYMENT_GATEWAY];
 
             //echo '<br/><br/>Account: ';
             //print_r($data);
@@ -85,7 +86,7 @@ class Account_model extends Ppa_model
      *
      * @return    void
      */
-    public function get_by_user_id($user_id = null, $account_enabled = array(1))
+    public function get_by_user_id($user_id = null, $account_enabled = array(1), $account_type = null)
     {
 	$ret = array();
 
@@ -98,16 +99,24 @@ class Account_model extends Ppa_model
 	//
 	$sql = "SELECT ac.*, ad.*, u.user_firstname, u.user_lastname, u.user_phone, u.user_prefix, u.user_email, 
             IF(ac.account_balance>0,ac.account_balance,'N/A') AS account_balance,
-            CONCAT(SUBSTR(ac.account_number,1,4),REPEAT('X',LENGTH(ac.account_number)-8),SUBSTR(ac.account_number,-4)) AS account_number
+            CONCAT(SUBSTR(ac.account_number,1,4),REPEAT('X',LENGTH(ac.account_number)-8),SUBSTR(ac.account_number,-4)) AS account_number,
+            ac.account_number AS real_account_number
             FROM account ac
             INNER JOIN address ad ON ac.address_id = ad.address_id
             INNER JOIN user u ON ac.user_id = u.user_id
             WHERE ac.user_id = ? AND user_enabled = 1 AND account_enabled IN ('".implode("','",$account_enabled)."')";
+	
+	if( !empty($account_type) ) $sql .= " AND account_type = '$account_type'";
 
 	$query = $this->db->query($sql, array($user_id));
 
 	foreach ($query->result_array() as $row)
 	{
+		if( $row[ACCOUNT_TYPE] != TYPE_ACCOUNT_PAYPAL )
+		{
+			//$row[ACCOUNT_NUMBER] = $row['real_account_number']; 
+			unset($row['real_account_number']);
+		}
 	    $ret[] = $row;
 	}
 
@@ -340,6 +349,7 @@ class Account_model extends Ppa_model
                 . ACCOUNT_EXPIRY_MONTH . " " .
             ", CONCAT(SUBSTR(ac.account_number,1,4),REPEAT('X',LENGTH(ac.account_number)-8),SUBSTR(ac.account_number,-4)) AS account_safenumber " . 
             ", CONCAT(SUBSTR(ac.account_number,1,4),REPEAT('X',LENGTH(ac.account_number)-8),SUBSTR(ac.account_number,-4)) AS account_number " . 
+            ", ac." . PAYMENT_GATEWAY . " " . 
             ", '***' AS account_security_number " . 
             ", '****' AS account_security_pin " . 
             "FROM " . ACCOUNT_TABLE . " ac " .
@@ -425,19 +435,19 @@ class Account_model extends Ppa_model
             else
             {
                 // Construct expiry date from year and month form fields
-                $expiry_date =
-                    '20' . $data[FORM_ACCOUNT_EXPIRY_YEAR] .
-                    '-' .
-                    $data[FORM_ACCOUNT_EXPIRY_MONTH] .
-                    '-01';
+				if( !empty( $data[FORM_ACCOUNT_EXPIRY_YEAR]) AND !empty($data[FORM_ACCOUNT_EXPIRY_MONTH]) )
+				{
+					$data[FORM_ACCOUNT_EXPIRY] = '20' . $data[FORM_ACCOUNT_EXPIRY_YEAR] . '-' . $data[FORM_ACCOUNT_EXPIRY_MONTH] . '-01';
+				}
 
                 $account_data = array(
                     ACCOUNT_NAME => $data[FORM_ACCOUNT_NICKNAME],
-                    ACCOUNT_EXPIRY => $expiry_date
+                    ACCOUNT_EXPIRY => $data[FORM_ACCOUNT_EXPIRY]
                 );
-                if( !preg_match('/x/ims',$data[FORM_ACCOUNT_CREDITCARDNUMBER]) )
+				
+                if( $data[FORM_ACCOUNT_TYPE] != TYPE_ACCOUNT_PAYPAL && !preg_match('/x/ims',$data[FORM_ACCOUNT_CREDITCARDNUMBER]) )
                 {
-                    $account_data[ACCOUNT_NUMBER] = preg_replace('/(\d{4})(\d+)(\d{4})/','$1XXXXXXXX$3',$data[FORM_ACCOUNT_CREDITCARDNUMBER]);
+                    $data[FORM_ACCOUNT_CREDITCARDNUMBER] = preg_replace('/(\d{4})(\d+)(\d{4})/','$1XXXXXXXX$3',$data[FORM_ACCOUNT_CREDITCARDNUMBER]);
                 }
                 if( !preg_match('/\*/ims',$data[FORM_ACCOUNT_SECURITY_NUMBER]) )
                 {
@@ -447,9 +457,12 @@ class Account_model extends Ppa_model
                 {
                     $account_data[ACCOUNT_SECURITY_PIN] = md5($data[FORM_ACCOUNT_SECURITY_PIN]);
                 }
+				
+                $account_data[ACCOUNT_NUMBER] = $data[FORM_ACCOUNT_CREDITCARDNUMBER];
             }
 
             // Now add the fields that are common to all account types
+            if( isset($data[ACCOUNT_ENABLED]) ) $account_data[ACCOUNT_ENABLED] = $data[ACCOUNT_ENABLED];
             $account_data[ACCOUNT_TYPE] = $data[FORM_ACCOUNT_TYPE];
             $account_data[ACCOUNT_FIRSTNAME] = $data[FORM_FIRSTNAME];
             $account_data[ACCOUNT_LASTNAME] = $data[FORM_LASTNAME];

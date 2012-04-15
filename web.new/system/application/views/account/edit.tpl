@@ -62,6 +62,7 @@
                             <option value="3" {if $account.accounttype == 3}selected{/if}>AMEX</option>
                             <option value="10" {if $account.accounttype == 10}selected{/if}>Bank Account</option>
                             <option value="12" {if $account.accounttype == 12}selected{/if}>Prado GC</option>
+                            <option value="9" {if $account.accounttype == 9}selected{/if}>Paypal</option>
                         </select>
                     </td>
                 </tr>

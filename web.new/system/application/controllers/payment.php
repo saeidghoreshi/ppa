@@ -1,6 +1,6 @@
 <?php
 
-require_once(APPPATH.'libraries/Ppa_controller.php');
+//require_once(APPPATH.'libraries/Ppa_controller.php');
 
 /*
   @file system/application/controllers/payment.php

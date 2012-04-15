@@ -9,7 +9,7 @@
  * @since		Version 1.0
  * @filesource          system/application/controllers/sms.php
  */
-require_once(APPPATH . 'libraries/Ppa_controller.php');
+//require_once(APPPATH . 'libraries/Ppa_controller.php');
 
 class Sms_twilio extends Ppa_controller {
 
