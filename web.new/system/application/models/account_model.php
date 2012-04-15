@@ -66,7 +66,9 @@ class Account_model extends Ppa_model
             $account_data[ACCOUNT_FIRSTNAME] = $data[FORM_FIRSTNAME];
             $account_data[ACCOUNT_LASTNAME] = $data[FORM_LASTNAME];
             $account_data[ACCOUNT_PREFIX] = $data[FORM_PREFIX];
-            $account_data[PAYMENT_GATEWAY] = $data[PAYMENT_GATEWAY];
+			
+			if( !empty($data[PAYMENT_GATEWAY]) ) $account_data[PAYMENT_GATEWAY] = $data[PAYMENT_GATEWAY];
+			if( !empty($data[ACCOUNT_EMAIL]) ) $account_data[ACCOUNT_EMAIL] = $data[ACCOUNT_EMAIL];
 
             //echo '<br/><br/>Account: ';
             //print_r($data);
@@ -463,6 +465,8 @@ class Account_model extends Ppa_model
 
             // Now add the fields that are common to all account types
             if( isset($data[ACCOUNT_ENABLED]) ) $account_data[ACCOUNT_ENABLED] = $data[ACCOUNT_ENABLED];
+			if( !empty($data[PAYMENT_GATEWAY]) ) $account_data[PAYMENT_GATEWAY] = $data[PAYMENT_GATEWAY];
+			if( !empty($data[ACCOUNT_EMAIL]) ) $account_data[ACCOUNT_EMAIL] = $data[ACCOUNT_EMAIL];
             $account_data[ACCOUNT_TYPE] = $data[FORM_ACCOUNT_TYPE];
             $account_data[ACCOUNT_FIRSTNAME] = $data[FORM_FIRSTNAME];
             $account_data[ACCOUNT_LASTNAME] = $data[FORM_LASTNAME];

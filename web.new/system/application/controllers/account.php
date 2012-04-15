@@ -216,8 +216,10 @@ class Account extends Ppa_controller {
 								$contactPhoneNumber = $_POST[FORM_PHONE];
 
 
-								$this->user_model->update($user[USER_ID], array('paypal_key' => $response->createAccountKey,
-									'paypal_id' => $response->accountId)
+								$this->user_model->update($user[USER_ID], array(
+									'paypal_key' => $response->createAccountKey,
+									'paypal_id' => $response->accountId, 
+									'paypal_email' => $email)
 								);
 
 								$paypal_address = array(FORM_ADDRESS_STREET => $addressline1,
@@ -346,6 +348,7 @@ class Account extends Ppa_controller {
 							FORM_ACCOUNT_SECURITY_NUMBER => '',
 							FORM_ACCOUNT_SECURITY_PIN => $accountPin,
 							ACCOUNT_ENABLED => 0,
+							ACCOUNT_EMAIL => $senderEmail,
 							PAYMENT_GATEWAY => 'Paypal'
 						);
 

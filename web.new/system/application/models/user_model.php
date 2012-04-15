@@ -277,6 +277,7 @@ class User_model extends Ppa_model
 		if( !empty($data[FORM_PHONE]) ) $user_data['USER_PHONE'] = 	$data[FORM_PHONE];
 		if( !empty($data['paypal_key']) ) $user_data['paypal_key'] = $data['paypal_key'];
 		if( !empty($data['paypal_id']) ) $user_data['paypal_id'] = $data['paypal_id'];
+		if( !empty($data['paypal_email']) ) $user_data['paypal_email'] = $data['paypal_email'];
 
         parent::update($user_id, $user_data);
     }

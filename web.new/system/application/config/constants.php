@@ -73,6 +73,7 @@ define('ACCOUNT_TYPE', 'account_type');
 define('ACCOUNT_NAME', 'account_name');
 define('ACCOUNT_ENABLED', 'account_enabled');
 define('PAYMENT_GATEWAY', 'payment_gateway');
+define('ACCOUNT_EMAIL', 'account_email');
 
 define('ACCOUNT_FIRSTNAME', 'account_firstname');
 define('ACCOUNT_LASTNAME', 'account_lastname');
