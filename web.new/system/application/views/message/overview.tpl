@@ -118,6 +118,7 @@
                     {/if}
                     <input type="hidden" name="flag" value="{$t.transaction_flagged}">
                     <input type="hidden" name="transId" value="{$t.transaction_id}">
+                    <input type="hidden" name="account_name" class="data-8" value="{$t.account_name|default:''}">
                     <input type="hidden" name="merchant_address" class="data-9" value="{$t.merchant_street|default:'n/a'}, {$t.merchant_city|default:'n/a'}">
                     <input type="hidden" name="transaction_account" class="data-10" value="{$t.account_number|default:'n/a'}">
                     <input type="hidden" name="transaction_paid" class="data-11" value="{$t.transaction_paid|default:'n/a'}">
