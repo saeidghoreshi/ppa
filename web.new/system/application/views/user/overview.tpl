@@ -42,7 +42,7 @@
             </tr>
             <tr>
                 <td class="right">Date of Birth:</td>
-                <td>{$user.dob|default:""}</td>
+                <td>{if $user.dob ne '0000-00-00'}{$user.dob|default:''}{/if}</td>
             </tr>
             <tr class="dotted_line">
                 <td colspan="2">&nbsp;</td>

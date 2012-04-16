@@ -74,7 +74,7 @@
                             <input title="Date of Birth"
                                    type="text"
                                    name="{$smarty.const.FORM_DOB}"
-                                   value="{$user.dob}" />
+                                   value="{if $user.dob ne '0000-00-00'}{$user.dob|default:''}{/if}" />
                         </td>
                     </tr>
                     <tr class="dotted_line">
