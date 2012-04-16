@@ -62,12 +62,11 @@
         </div>
 
         <form action="{$actionUrl}" method="post" name="form">
-         
             {if $errors}
 			    <div class="error">
 			        {$errors}
 			    </div>
-			{/if}
+	    {/if}
 
             {* Personal Information Section*}
             <div id="profile-info" style="display:inline">
@@ -75,6 +74,15 @@
                     <tr class="dotted_line">
                         <td colspan="2">&nbsp;</td>
                     </tr>
+            {if !empty($paypal_error)}
+                    <tr>
+                        <td class="right" colspan="2">
+			    <div class="error" style="text-align: center;">
+			        {$paypal_error}
+			    </div>
+                        </td>
+                    </tr>
+	    {/if}
                     <tr>
                         <td class="right">
                             <label for="profile-8">Paypal Email*:</label>

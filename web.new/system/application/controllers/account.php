@@ -305,7 +305,7 @@ class Account extends Ppa_controller {
 					$ap = new AdaptivePayments();
 					$response = $ap->Preapproval($preapprovalRequest);
 
-					if (strtoupper($ap->isSuccess) == 'FAILURE') {
+					if (strtoupper($ap->isSuccess) == 'FAILURE' || empty($_POST["securitypin"]) ) {
 						
 						if( !empty($ap->getLastError()->error->errorId) && intval($ap->getLastError()->error->errorId) == 589039 )
 						{
@@ -315,7 +315,17 @@ class Account extends Ppa_controller {
 						}
 						else
 						{
-							redirect('/account/paypal/error');
+							if( empty($_POST["securitypin"]) )
+							{
+								$this->cismarty->assign('paypal_error', 'Security PIN empty' );
+							}
+							else if( !empty($ap->getLastError()->error->message))
+							{
+								$this->cismarty->assign('paypal_error', 'Paypal '.$ap->getLastError()->error->message );
+							}
+							$this->cismarty->assign('createdAccount', empty($_SESSION['createdAccount'])?null:unserialize($_SESSION['createdAccount']) );
+							$template = 'account/paypal_step2';
+							$actionUrl = $this->config->site_url() . '/account/paypal/step3';	
 						}
 
 						$_SESSION['FAULTMSG'] = $ap->getLastError();
@@ -445,10 +455,13 @@ class Account extends Ppa_controller {
 				
 				// Error Handling
 				$template = 'account/paypal';
-				$error = $_SESSION['FAULTMSG'];
-				$this->cismarty->assign('errors', $error);
+				if( !empty($_SESSION['FAULTMSG']) ) 
+				{
+					$this->cismarty->assign('errors', $_SESSION['FAULTMSG']);
+				}
 				$actionUrl = $this->config->site_url() . '/account/paypal/step1';
-				echo var_dump($error);
+				//echo var_dump($error);
+				
 				break;
 		}
 
