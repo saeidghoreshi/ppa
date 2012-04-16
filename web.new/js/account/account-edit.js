@@ -45,7 +45,7 @@ $(document).ready(function(){
 	    //console.log(data);
 	    obj['profile-1'] = data.firstname
 	    obj['profile-2'] = data.lastname;
-	    obj['profile-3'] = 2;
+	    obj['profile-3'] = data.prefix;
 	    obj['profile-4'] = data.street;
 	    obj['profile-5'] = data.city;
 	    obj['profile-6'] = data.state;
