@@ -12,14 +12,16 @@ $(document).ready(function(){
         value = $(this).val();
 
         if( value != "" ) {
-            $('.paymethod').hide(700);
             if( value == '10' ) {
+		$('.paymethod').hide(700);
                 $('#paymethod-2').show(700);
             }
             else if( value == '9' ) {
                 location.href = 'index.php/account/paypal/step2';
+		return;
             }
             else {
+		$('.paymethod').hide(700);
                 $('#paymethod-1').show(700);
             }
             $('#profile-info').show(700);
