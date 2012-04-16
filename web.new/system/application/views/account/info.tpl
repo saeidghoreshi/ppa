@@ -24,10 +24,12 @@
 	            </a>
 	            <span class="custom_button">
 	                <span>
+			    {if $account.accounttype ne 9 and $account.accounttype ne 12}
 	                    <a href="{$site_url}/account/edit/{$account.id}">
 	                    Edit
 	                    </a>
 	                    &nbsp;|&nbsp;
+			    {/if}
 {if false}
                     <a href="{$uri_string}#">Delete</a>
                     &nbsp;|&nbsp;

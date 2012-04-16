@@ -28,10 +28,12 @@
         <div class="rinline">
             <span class="custom_button">
                 <span>
+		    {if $account.accounttype ne 9 and $account.accounttype ne 12}
                     <a href="{$site_url}/account/edit/{$account.id}">
                     Edit
                     </a>
                     &nbsp;|&nbsp;
+		    {/if}
                     <a href="{$uri_string}#">Delete</a>
                     &nbsp;|&nbsp;
                     <a href="{$site_url}/account/disable/{$account.id}">
