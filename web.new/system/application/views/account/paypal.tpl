@@ -68,7 +68,15 @@
                         </td>
                         <td>&nbsp;</td>
                     </tr>
-
+            {if !empty($paypal_error)}
+                    <tr>
+                        <td class="right" colspan="2">
+			    <div class="error" style="text-align: center;">
+			        {$paypal_error}
+			    </div>
+                        </td>
+                    </tr>
+	    {/if}
                     <tr>
                         <td class="right">
                             <label for="profile-8">Paypal Email*:</label>
@@ -88,7 +96,7 @@
                             <input title="First Name"
                                    type="text" id="profile-1"
                                    name="{$smarty.const.FORM_FIRSTNAME}"
-                                   value="{$account.firstname}" />
+                                   value="{$smarty.post.firstname|default:$account.firstname}" />
                         </td>
                     </tr>
                     <tr>
@@ -99,7 +107,7 @@
                             <input title="Last Name"
                                    type="text" id="profile-2"
                                    name="{$smarty.const.FORM_LASTNAME}"
-                                   value="{$account.lastname}" />
+                                   value="{$smarty.post.lastname|default:$account.lastname}" />
                         </td>
                     </tr>
                     <tr>
@@ -123,7 +131,7 @@
                             <input title="Date of Birth"
                                    type="text"
                                    name="{$smarty.const.FORM_DOB}"
-                                   value="{if $user.dob ne '0000-00-00'}{$user.dob|default:''}{/if}" />
+                                   value="{if !empty($smarty.post.dob)}{$smarty.post.dob}{else}{if $user.dob ne '0000-00-00'}{$user.dob|default:''}{/if}{/if}" />
                         </td>
                     </tr>
                     <tr>
@@ -134,7 +142,7 @@
                             <input title="Phone"
                                    type="text"
                                    name="{$smarty.const.FORM_PHONE}"
-                                   value="{$user.phone}" />
+                                   value="{$smarty.post.phone|default:$user.phone}" />
                         </td>
                     </tr>
                     <tr>
@@ -145,7 +153,7 @@
                             <input title="Street Address"
                                    type="text" id="profile-4"
                                    name="{$smarty.const.FORM_ADDRESS_STREET}"
-                                   value="{$account.street}" />
+                                   value="{$smarty.post.street|default:$account.street}" />
                         </td>
                     </tr>
                     <tr>
@@ -156,7 +164,7 @@
                             <input title="City"
                                    type="text" id="profile-5"
                                    name="{$smarty.const.FORM_ADDRESS_CITY}"
-                                   value="{$account.city}" />
+                                   value="{$smarty.post.city|default:$account.city}" />
                         </td>
                     </tr>
                     <tr>
@@ -167,7 +175,7 @@
                             <input title="State/Province"
                                    type="text" id="profile-6"
                                    name="{$smarty.const.FORM_ADDRESS_STATE}"
-                                   value="{$account.state}" />
+                                   value="{$smarty.post.state|default:$account.state}" />
                         </td>
                     </tr>
                     <tr>
@@ -178,7 +186,7 @@
                             <input title="Zip"
                                    type="text" id="profile-7"
                                    name="{$smarty.const.FORM_ADDRESS_ZIP}"
-                                   value="{$account.zip}" />
+                                   value="{$smarty.post.zip|default:$account.zip}" />
                         </td>
                     </tr>
                     <tr>
@@ -189,7 +197,7 @@
                             <input title="Country"
                                    type="text" id="profile-8"
                                    name="{$smarty.const.FORM_ADDRESS_COUNTRY}"
-                                   value="{$account.country}" />
+                                   value="{$smarty.post.country|default:$account.country}" />
                         </td>
                     </tr>
                 </table>

@@ -128,27 +128,19 @@ class Account extends Ppa_controller {
 						$citizenshipCountryCode = 'CA';
 						$notificationURL = 'http://stranger.paypal.com/cgi-bin/ipntest.cgi';
 						$partnerField1 = '';
-						$partnerField2 = '';
-						$partnerField3 = '';
-						$partnerField4 = '';
-						$partnerField5 = '';
 						$sandboxEmail = $this->config->item('DeveloperEmailAccount');
 						$email = $_POST['email'];
-						//$email = 'noah2@payphoneapp.com';
 
-						/* Make the call to PayPal to create Account on behalf of the caller
-						  If an error occured, show the resulting errors
-						 */
 						$CARequest = new CreateAccountRequest();
 						$CARequest->accountType = $accountType;
 
 						$address = new AddressType();
-						$address->city = $addresscity;
-						$address->countryCode = $addresscountryCode;
-						$address->line1 = $addressline1;
-						$address->line2 = $addressline2;
-						$address->postalCode = $addresspostalCode;
-						$address->state = $addressstate;
+						if( !empty($addresscity)) $address->city = $addresscity;
+						if( !empty($addresscountryCode)) $address->countryCode = $addresscountryCode;
+						if( !empty($addressline1)) $address->line1 = $addressline1;
+						if( !empty($addressline2)) $address->line2 = $addressline2;
+						if( !empty($addresspostalCode)) $address->postalCode = $addresspostalCode;
+						if( !empty($addressstate)) $address->state = $addressstate;
 						$CARequest->address = $address;
 
 						$CARequest->citizenshipCountryCode = $citizenshipCountryCode;
@@ -157,23 +149,19 @@ class Account extends Ppa_controller {
 						$CARequest->clientDetails->deviceId = $this->config->item('DeviceID');
 						$CARequest->clientDetails->ipAddress = "127.0.0.1";
 
-						$CARequest->contactPhoneNumber = $contactPhoneNumber;
-						$CARequest->currencyCode = $currencyCode;
-						$CARequest->dateOfBirth = $dateOfBirth;
+						if( !empty($contactPhoneNumber)) $CARequest->contactPhoneNumber = $contactPhoneNumber;
+						if( !empty($currencyCode)) $CARequest->currencyCode = $currencyCode;
+						if( !empty($dateOfBirth)) $CARequest->dateOfBirth = $dateOfBirth;
 
 						$name = new NameType();
-						$name->firstName = $namefirstName;
-						$name->middleName = $namemiddleName;
-						$name->lastName = $namelastName;
-						$name->salutation = $name_salutation;
-						$CARequest->name = $name;
+						if( !empty($namefirstName)) $name->firstName = $namefirstName;
+						if( !empty($namemiddleName)) $name->middleName = $namemiddleName;
+						if( !empty($namelastName)) $name->lastName = $namelastName;
+						if( !empty($name_salutation)) $name->salutation = $name_salutation;
+						if( !empty($name)) $CARequest->name = $name;
 
 						$CARequest->notificationURL = $notificationURL;
 						$CARequest->partnerField1 = $partnerField1;
-						$CARequest->partnerField2 = $partnerField2;
-						$CARequest->partnerField3 = $partnerField3;
-						$CARequest->partnerField4 = $partnerField4;
-						$CARequest->partnerField5 = $partnerField5;
 						$CARequest->preferredLanguageCode = "en_US";
 
 						$rEnvelope = new RequestEnvelope();
@@ -192,11 +180,26 @@ class Account extends Ppa_controller {
 						$aa = new AdaptiveAccounts();
 						$aa->sandBoxEmailAddress = $sandboxEmail;
 						$response = $aa->CreateAccount($CARequest);
-
 						if (strtoupper($aa->isSuccess) == 'FAILURE') {
 							$_SESSION['FAULTMSG'] = $aa->getLastError();
-							$location = $this->config->site_url() . '/account/paypal/error';
-							header("Location: $location");
+							if( !empty($aa->getLastError()->error))
+							{
+								$errors = '';
+								if( is_array($aa->getLastError()->error) )
+								{
+									foreach($aa->getLastError()->error AS $error)
+									{
+										$errors .= $error->message."\n";
+									}
+									$this->cismarty->assign('paypal_error', 'Paypal '. $errors);
+								}
+								else
+								{
+									$errors .= $aa->getLastError()->error->message;
+								}
+								
+								$this->cismarty->assign('paypal_error', nl2br($errors));
+							}
 						} else {
 							// update paypal references
 							if (!empty($response->createAccountKey) && !empty($response->accountId)) {
@@ -250,7 +253,7 @@ class Account extends Ppa_controller {
 						$errorData->message = $ex->getMessage();
 						$fault->error = $errorData;
 						$_SESSION['FAULTMSG'] = $fault;
-						$location = $this->config->site_url() . '/account/paypal/error';
+						$location = $this->config->site_url() . '/account/paypal/error2';
 						header("Location: $location");
 					}
 					
@@ -319,9 +322,23 @@ class Account extends Ppa_controller {
 							{
 								$this->cismarty->assign('paypal_error', 'Security PIN empty' );
 							}
-							else if( !empty($ap->getLastError()->error->message))
+							else if( !empty($aa->getLastError()->error))
 							{
-								$this->cismarty->assign('paypal_error', 'Paypal '.$ap->getLastError()->error->message );
+								if( is_array($aa->getLastError()->error) )
+								{
+									$errors = '';
+									foreach($aa->getLastError()->error AS $error)
+									{
+										$errors .= $error->message."\n";
+									}
+									$this->cismarty->assign('paypal_error', 'Paypal '. $errors);
+								}
+								else
+								{
+									$errors .= $aa->getLastError()->error->message;
+								}
+								
+								$this->cismarty->assign('paypal_error', nl2br($errors));
 							}
 							$this->cismarty->assign('createdAccount', empty($_SESSION['createdAccount'])?null:unserialize($_SESSION['createdAccount']) );
 							$template = 'account/paypal_step2';
