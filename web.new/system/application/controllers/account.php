@@ -92,6 +92,9 @@ class Account extends Ppa_controller {
 		require_once APPPATH . 'libraries/paypal/AdaptivePayments.php';
 		//require_once APPPATH . 'libraries/paypal/web_constants.php';
 
+        $this->load->helper('mobile_detect');
+        //return is_mobile();
+
 		$user = $this->get_user_for_form();
 		$account = $this->get_account_data($user);
 		$actionUrl = '';		
@@ -172,6 +175,7 @@ class Account extends Ppa_controller {
 
 						$CARequest->createAccountWebOptions = new CreateAccountWebOptionsType();
 						$CARequest->createAccountWebOptions->returnUrl = $returnURL;
+						//$CARequest->createAccountWebOptions->useMiniBrowser = is_mobile();
 						$CARequest->registrationType = "WEB";
 
 						//$CARequest->sandboxEmailAddress = $sandboxEmail;
@@ -419,7 +423,14 @@ class Account extends Ppa_controller {
 				if( !empty($paypal_account_existing) && $paypal_account_existing[0][ACCOUNT_ENABLED] )
 				{
 					// Paypal configured and enabled
-					redirect('account/info/'.$paypal_account_existing[0][ACCOUNT_ID]);
+					if( is_mobile() )
+					{
+						redirect('account/paypal/success');
+					}
+					else
+					{
+						redirect('account/info/'.$paypal_account_existing[0][ACCOUNT_ID]);
+					}
 				}
 				if( empty($paypal_account_existing) )
 				{
@@ -451,7 +462,16 @@ class Account extends Ppa_controller {
 						{
 							// Enable Paypal and redirect to account info
 							$this->account_model->enable($paypal_account_existing[0][ACCOUNT_ID]);
-							redirect('account/info/'.$paypal_account_existing[0][ACCOUNT_ID]);
+							
+							// Paypal configured and enabled
+							if ( is_mobile() )
+							{
+								redirect('account/paypal/success');
+							}
+							else
+							{
+								redirect('account/info/' . $paypal_account_existing[0][ACCOUNT_ID]);
+							}
 						}
 						
 					} catch (Exception $ex) {
@@ -465,6 +485,14 @@ class Account extends Ppa_controller {
 						redirect('/account/paypal/error');
 					}
 				}
+				
+				break;
+				
+			case 'success':
+				
+				// Error Handling
+				$template = 'account/paypal_success';
+				$actionUrl = $this->config->site_url() . '/account/paypal/step1';
 				
 				break;
 				

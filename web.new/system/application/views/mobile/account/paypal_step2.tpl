@@ -1,8 +1,18 @@
-<link rel="stylesheet"
-      href="{$config.base_url}css/account-edit.css" type="text/css" />
+<link rel="stylesheet" href="{$config.base_url}css/account-edit.css" type="text/css" />
+<link rel="stylesheet" href="{$config.base_url}css/general.css" type="text/css">
 <script src="{$config.base_url}js/account/account-edit.js" type="text/javascript"></script>
 <style TYPE="text/css">
-td.right { color: #666; }
+label { display: block; }
+.copyright a { color: #01B0EF; }
+.actions { text-align: left; }
+input[type="text"], input[type="password"] {
+width: 80%;
+max-width: 300px;
+}
+#header-left {
+width: 100%;
+max-width: 300px;
+}
 </style>
 
 <input type="hidden" id="currentPageTab" name="currentPageTab" value="h_account">
@@ -80,7 +90,7 @@ td.right { color: #666; }
                     </tr>
             {if !empty($paypal_error)}
                     <tr>
-                        <td class="right" colspan="2">
+                        <td class="r2" colspan="2">
 			    <div class="error" style="text-align: center;">
 			        {$paypal_error}
 			    </div>
@@ -88,10 +98,8 @@ td.right { color: #666; }
                     </tr>
 	    {/if}
                     <tr>
-                        <td class="right">
-                            <label for="profile-8">Paypal Email*:</label>
-                        </td>
-                        <td>
+                        <td class="r2">
+                            <label for="profile-8">Paypal Email*</label>
                             <input title="Email"
                                    type="text" id="profile-8-1"
                                    name="email"
@@ -99,10 +107,8 @@ td.right { color: #666; }
                         </td>
                     </tr>
                     <tr>
-                        <td class="right">
-                            <label for="profile-8">Starting date*:</label>
-                        </td>
-                        <td>
+                        <td class="r2">
+                            <label for="profile-8">Starting date*</label>
                             <input title="Starting date"
                                    type="text" id="profile-8-2"
                                    name="startingDate"
@@ -110,10 +116,8 @@ td.right { color: #666; }
                         </td>
                     </tr>
                     <tr>
-                        <td class="right">
-                            <label for="profile-8">Ending date*:</label>
-                        </td>
-                        <td>
+                        <td class="r2">
+                            <label for="profile-8">Ending date*</label>
                             <input title="Ending date"
                                    type="text" id="profile-8-3"
                                    name="endingDate"
@@ -121,10 +125,8 @@ td.right { color: #666; }
                         </td>
                     </tr>
                     <tr>
-                        <td class="right">
-                            <label for="profile-8">Maximum Number of Payments:</label>
-                        </td>
-                        <td>
+                        <td class="r2">
+                            <label for="profile-8">Max Number of Payments</label>
                             <input title="Maximum Number of Payments"
                                    type="text" id="profile-8-4"
                                    name="maxNumberOfPayments"
@@ -132,10 +134,8 @@ td.right { color: #666; }
                         </td>
                     </tr>
                     <tr>
-                        <td class="right">
-                            <label for="profile-8">Maximum Total Amount*:</label>
-                        </td>
-                        <td>
+                        <td class="r2">
+                            <label for="profile-8">Max Total Amount*</label>
                             <input title="Maximum Total Amount"
                                    type="text" id="profile-8-5"
                                    name="maxTotalAmountOfAllPayments"
@@ -143,10 +143,8 @@ td.right { color: #666; }
                         </td>
                     </tr>
                     <tr>
-                        <td class="right">
-                            <label for="payment-1-5">Security PIN*:</label>
-                        </td>
-                        <td>
+                        <td class="r2">
+                            <label for="payment-1-5">Security PIN*</label>
                             <input title="PIN"
                                    type="password" id="payment-1-5"
                                    name="{$smarty.const.FORM_ACCOUNT_SECURITY_PIN}"
@@ -165,8 +163,7 @@ td.right { color: #666; }
                                        value="{$account.id}" />
                             {/if}
                             <table><tr><td>
-                            <a title="Cancel"
-                               href="{$site_url}/account/">
+                            <a title="Cancel" href="{$site_url}/account/" style="font-weight: normal;">
                                 Cancel
                             </a>
                             </td><td id="paypalSubmitForm">

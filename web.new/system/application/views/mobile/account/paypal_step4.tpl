@@ -1,10 +1,6 @@
 <link rel="stylesheet"
       href="{$config.base_url}css/account-edit.css" type="text/css" />
 <script src="{$config.base_url}js/account/account-edit.js" type="text/javascript"></script>
-<style TYPE="text/css">
-td.right { color: #666; }
-</style>
-
 <input type="hidden" id="currentPageTab" name="currentPageTab" value="h_account">
 
 <div id="trans_wrap">
@@ -14,7 +10,7 @@ td.right { color: #666; }
     	<div id="header-left">
             <h1>Confirm Paypal Account</h1>
         </div>
-	{if false && !empty($createdAccount)}
+	{if $createdAccount}
 <table align="center" width="50%">
     <tr>
         <td class="thinfield">CorrelationId:</td>
@@ -66,45 +62,26 @@ td.right { color: #666; }
         </div>
 
         <form action="{$actionUrl}" method="post" name="form">
+         
             {if $errors}
 			    <div class="error">
 			        {$errors}
 			    </div>
-	    {/if}
+			{/if}
 
             {* Personal Information Section*}
             <div id="profile-info" style="display:inline">
-                <table class="account_info" style="color: #666;">
+                <table class="account_info">
                     <tr class="dotted_line">
                         <td colspan="2">&nbsp;</td>
-                    </tr>
-            {if !empty($paypal_error)}
-                    <tr>
-                        <td class="right" colspan="2">
-			    <div class="error" style="text-align: center;">
-			        {$paypal_error}
-			    </div>
-                        </td>
-                    </tr>
-	    {/if}
-                    <tr>
-                        <td class="right">
-                            <label for="profile-8">Paypal Email*:</label>
-                        </td>
-                        <td>
-                            <input title="Email"
-                                   type="text" id="profile-8-1"
-                                   name="email"
-                                   value="{$smarty.post.email|default:$smarty.session.paypal_email|default:$user.email}" />
-                        </td>
                     </tr>
                     <tr>
                         <td class="right">
                             <label for="profile-8">Starting date*:</label>
                         </td>
                         <td>
-                            <input title="Starting date"
-                                   type="text" id="profile-8-2"
+                            <input title="Country"
+                                   type="text" id="profile-8-1"
                                    name="startingDate"
                                    value="{$smarty.post.startingDate|default:$smarty.now|date_format:"%Y-%m-%d"}" />
                         </td>
@@ -114,8 +91,8 @@ td.right { color: #666; }
                             <label for="profile-8">Ending date*:</label>
                         </td>
                         <td>
-                            <input title="Ending date"
-                                   type="text" id="profile-8-3"
+                            <input title="Country"
+                                   type="text" id="profile-8-2"
                                    name="endingDate"
                                    value="{$smarty.post.endingDate|default:($smarty.now+31556926)|date_format:"%Y-%m-%d"}" />
                         </td>
@@ -125,8 +102,8 @@ td.right { color: #666; }
                             <label for="profile-8">Maximum Number of Payments:</label>
                         </td>
                         <td>
-                            <input title="Maximum Number of Payments"
-                                   type="text" id="profile-8-4"
+                            <input title="Country"
+                                   type="text" id="profile-8-3"
                                    name="maxNumberOfPayments"
                                    value="{$smarty.post.maxNumberOfPayments|default:1000}" />
                         </td>
@@ -136,15 +113,15 @@ td.right { color: #666; }
                             <label for="profile-8">Maximum Total Amount*:</label>
                         </td>
                         <td>
-                            <input title="Maximum Total Amount"
-                                   type="text" id="profile-8-5"
+                            <input title="Country"
+                                   type="text" id="profile-8-4"
                                    name="maxTotalAmountOfAllPayments"
                                    value="{$smarty.post.maxTotalAmountOfAllPayments|default:2000}" />
                         </td>
                     </tr>
                     <tr>
                         <td class="right">
-                            <label for="payment-1-5">Security PIN*:</label>
+                            <label for="payment-1-5">Security PIN:</label>
                         </td>
                         <td>
                             <input title="PIN"
@@ -178,6 +155,9 @@ td.right { color: #666; }
                 </div>
             </div>
         </form>
+    
+    
+	    <a href="{$actionUrl}">Go Back To Accounts</a>
 
     </div>
 
