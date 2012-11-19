@@ -1,0 +1,1499 @@
+@font-face {
+    font-family: 'Rockwell STD';
+    src: url('fonts/rockwellstd-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Light';
+    src: url('fonts/helveticaneue-light-webfont.ttf') format('truetype');
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Medium';
+    src: url('fonts/helveticaneue-medium-webfont.ttf') format('truetype');
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Condensed';
+    src: url('fonts/helveticaneue-condensedbold-webfont.ttf') format('truetype');
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+}
+
+#mainContent {
+	position:relative;
+    /*z-index:1;*/
+    height: 460px;
+    width: 100%;
+	overflow:auto;
+}
+
+#mainScroller {
+    /*z-index:1;*/
+    -webkit-touch-callout:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+    margin: 0;
+    width: 90%;
+	padding:0 5%;
+	height: auto;
+}
+
+#profileForm, #securityForm {
+overflow: hidden;}
+
+body {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+	background: #B4E4FA;
+	color: #000;
+	font-family: Helvetica Neue, sans-serif;
+    margin: 0;
+    height: 460px;
+}
+
+address {
+font-style: normal;}
+
+a, a:visited
+{
+	font-weight: bold;
+	text-decoration: none;
+	color: #000;
+}
+img {border: 0; margin: 0; padding: 0;}
+
+a.button, a.button:visited
+{
+	background: #999999;
+	color: #000;
+	text-shadow: none;
+	border: none;
+	font-weight: bold;
+	text-decoration: none;
+	display: inline;
+	line-height: 1em;
+	padding: 5px 10px;
+	margin: 0;
+	font-size: 13px;
+}
+a.button:hover
+{
+	background: #ccc;
+}
+a.disabled, a.disabled:visited
+{
+	color: #555; background: #999; border-color: #aaa; text-shadow: 0 1px 0 #ccc;
+}
+
+.button, .print.button
+{
+	background: #01b0ef;
+	border: 1px outset #CDDDED;
+	padding: 6px;
+	margin: 10px 0;
+	color: #fff;
+	text-shadow: 0px -1px 0 rgba(0,0,0,0.33);
+    font-family: Helvetica Neue;
+	font-weight: bold;
+	font-size: 14px;
+	text-decoration: none;
+}
+a.print.button:hover
+{
+	background: #0091C1;
+}
+
+.error
+{
+	color: #830404;
+	text-shadow: 0px 1px 0 #fdd;
+	background: #E7C3A7;
+	padding: 10px;
+	width: 240px;
+	margin: 5px auto;
+	border-radius: 5px;
+}
+.message
+{
+	color: #404C3F;
+	text-shadow: 0px 1px 0 #dfd;
+	background: #C9EDC5;
+	padding: 10px;
+	width: 240px;
+	margin: 10px auto;
+	border-radius: 5px;
+}
+
+.success { color: #3f3; font-weight: bold; }
+.cancelled { color: #f33 !important; font-weight: bold; }
+.warning { color: #a00 !important; font-weight: bold; }
+
+/* ***********************
+ * mobile specifics
+ * ***********************/
+
+html {
+    background-color: #E8E8E8;
+}
+
+body.mobile {
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(206,240,252)),
+	    color-stop(1, rgb(235,248,254))
+	);
+    height: 460px; /* important so the gradient isn't borked */
+    padding: 0;
+    text-align: left;
+}
+
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+    color: #01B0EF;
+}
+
+div#mainLogo {
+    padding: 0 0 0 12px;
+    margin-left: -5%;
+}
+
+.copyright {
+    bottom: 10px;
+    font-size: xx-small;
+    position: absolute;
+    text-align: center;
+    width: 70%;
+}
+
+.copyright a {
+	color: #fff;
+}
+
+input.wideButton {
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(8,181,241)),
+	    color-stop(1, rgb(156,221,249))
+	);
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.2);
+	-webkit-box-shadow: 2px 3px 8px rgba(0,0,0,0.15);
+	padding: 5px 10px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	width: 100%;
+}
+
+#signupForm input.wideButton, #loginForm input.wideButton {
+	padding: 5px 0;
+	width: 76%;
+	margin-left: 11%;
+}
+
+.overviewButton, #suspendButton {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #01B0EF;
+}
+
+h1 {
+	font-family: 'Rockwell Std', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: capitalize;
+    font-size: 2.8em;
+    font-weight: normal;
+    line-height: 0.9;
+    margin: 0.5em 0 0.2em;
+    color: #444;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+}
+
+h2 small {
+    font-size: 0.6em;
+}
+
+#sectionButtons {
+    margin: 0 0 .5em;
+}
+
+a.overviewButton {
+	background: url("assets/ob_arrow.png") no-repeat 95% 12px, -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(238, 238, 238)),
+        color-stop(1, rgb(248, 248, 248))
+    );
+    border: 1px solid #cbcbcb;
+    border-top: none;
+    display: block;
+	font-size: 24px;
+	padding: 0 5%;
+	width: 90%;
+	height: 44px;
+	line-height: 46px;
+	font-family: "helvetica neue light";
+	color: #444;
+	font-weight: normal;
+}
+
+.overviewButton:first-child {
+border-radius: 5px 5px 0 0;
+border-top: 1px solid #cbcbcb;}
+
+.overviewButton:last-child {
+border-radius: 0 0 5px 5px;}
+
+#overviewTitle {
+    margin: 5px 0 10px;
+    font-family: 'Rockwell STD';
+}
+/**/
+#doneButton {
+   background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(234,234,233)),
+	    color-stop(0.2, rgb(232,232,228)),
+	    color-stop(1, rgb(252,251,251))
+	);
+	-webkit-border-radius: 10px;
+	border: 1px solid rgba(0,0,0,0.03);
+	stroke: 1px solid rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+	padding: 5px 10px;
+	color: #333;
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.3);
+	font-size: 16px;
+	font-weight: normal;
+    position: absolute;
+    top: 20px;
+    right: 5%;
+}
+
+#shareMsg {
+    color: #666;
+    font-weight: normal;
+    margin: 0 0 0 7px;
+}
+#smsShare .button {
+    margin: 0;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+}
+#smsShare input[type="tel"] {
+	width: 90%;
+	margin-left: 0;
+	margin-right: 0;
+}
+p.cta {
+    color: #fefefe;
+    margin: 0 0 0.3em;
+}
+
+input[type='text'], input[type='password'], input[type='date'],
+input[type='email'], input[type='number'], input[type='tel']
+{
+    -webkit-box-shadow: inset 0 2px 5px rgba(0,0,0,0.075);
+    border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 5px;
+	font-size: 14px;
+    margin: 0.4em 11%;
+	padding: 8px 5%;
+	width: 65%;
+	outline: none;
+	-webkit-appearance: none;
+}
+
+
+div#tos {
+    color: #666;
+    margin: 0.5em 0 0.3em 11%;
+    width: 216px;
+}
+
+.sign-in-p {
+	width: 76%;
+    margin-left: 11%;
+}
+
+#termsBox {
+    float: left;
+    height: 20px;
+    margin: 0.5em;
+    width: 20px;
+    margin-right: 1em;
+}
+
+input:disabled {
+    background: #999;
+    border-color: #aaa;
+	color: #555;
+    text-shadow: 0 1px 0 #ccc;
+}
+
+#loginForm label, #signupForm label {
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8em;
+}
+
+#loginForm label a, #signupForm label a {
+    font-weight: normal;
+}
+
+
+#updateForm label {
+    color: #fefefe;
+}
+
+section {
+    margin: 10px 0;
+}
+
+select.securityQuestion, select#userPrefix, select.matte {
+	-webkit-appearance: none;
+	-webkit-border-radius: 5px;
+	background: url(assets/dropdown.png) right no-repeat #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    font-size: 14px;
+    padding: 0.5em;
+    margin: 0.4em 11%;
+	width: 75%;
+}
+
+label {
+	margin-left: 11%;
+	padding-left: 6px;
+    color: #666;
+    font-weight: bold;
+    margin-top: 15px;}
+
+select#userPrefix {
+    width: 100px;
+    margin-left: 11%;
+}
+
+select.expiry {
+    width: auto;
+    margin: 0.4em 0 0 10px;
+    padding-right: 3.3em;
+}
+
+select.expiry.first {
+    margin-left: 11%;
+}
+
+p.note {
+    font-size: 14px;
+    text-align: center;
+}
+
+a.cancelLink {
+background-image: -webkit-gradient(
+ linear,
+ left bottom,
+ left top,
+ color-stop(0, #EAEAE9),
+ color-stop(0.2, #E8E8E4),
+ color-stop(1, #FCFBFB)
+ );
+color: #DD6B6F;
+-webkit-border-radius: 5px;
+border: 1px solid rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15);
+padding: 5px 0;
+text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.75);
+font-size: 16px;
+width: 34%;
+margin: 10px 3% 10px 11%;
+display: block;
+text-align: center;
+float: left;
+}
+
+a.cancelLink2 {  
+   background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(234,234,233)),
+	    color-stop(0.2, rgb(232,232,228)),
+	    color-stop(1, rgb(252,251,251))
+	);
+	color: #dd6b6f;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.03);
+	-webkit-box-shadow: 2px 3px 8px rgba(0,0,0,0.15);
+	padding: 5px 0;
+	text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+	font-size: 16px;
+	width: 36%;
+	margin: 10px 3% 10px 11%;
+	display: block;
+	text-align: center;
+	float: left;
+}
+
+.button#ccDetailsSubmit, .button#bankDetailsSubmit, .button#saveButton, .button.slim {
+    padding: 3%;
+    margin-left: 4%;
+    width: 35%;
+}
+
+.button#saveButton, .button#ccDetailsSubmit, .button#ccSaveButton, .button#bankDetailsSubmit {
+padding: 5px 0;
+}
+
+input#passcode {
+    -webkit-appearance: none;
+    height: 40px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/****************
+ * modal view
+ * **************/
+#modalView {
+    -webkit-transition-duration: 800ms;
+    -webkit-transform: translate3d(0,0,0);
+    width: 100%;
+    height: 460px;
+    position: absolute;
+    top: 460px;
+    background: grey;
+}
+
+#modalHeader {
+    background: #788AB1;
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(0,172,240)),
+	    color-stop(0.5, rgb(25,188,242)),
+	    color-stop(0.5, rgb(39,189,243)),
+	    color-stop(1, rgb(122,216,247)),
+	    color-stop(1, rgb(206,240,252))
+	);
+    border-bottom: solid 1px #666;
+    border-top: none;
+    padding: 8px 2% 0 1%;
+    color: white;
+    height: 36px;
+    width: 98%;
+    text-align: center;
+    position: relative;
+}
+
+.modalButton {
+    background: url(assets/mb_left.png) no-repeat -1px, url(assets/mb_right.png) no-repeat right, url(assets/mb_center.png) repeat-x 7px 0;
+	height: 31px;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    font-weight: bold;
+    line-height: 29px;
+    padding: 0 8px;
+    font-size: 14px;
+    font-family: "helvetica neue";
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.33);
+}
+
+#modalBack {
+    
+	background: url(assets/mbb_left.png) left no-repeat, url(assets/mb_right.png) right no-repeat, url(assets/mb_center.png) repeat-x 17px 0;
+	background-size: 17px 31px, 7px 31px, 1px 31px;
+    float: left;
+    position: relative;
+    padding-left: 17px;
+}
+
+#modalBack div {
+	display: none;
+    -webkit-transform: rotate(45deg);
+    -webkit-box-shadow:inset 0 0 6px -5px #30c;
+    /*background: rgba(1, 176, 239, 1);*/
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        right top,
+        color-stop(0.37, rgba(1, 176, 239, 1)),
+        color-stop(0.57, rgba(1, 176, 239, 0.9)),
+        color-stop(0.65, rgba(1, 176, 239 ,0))
+    );
+    border: transparent;
+    border-left: black solid 1px;
+    border-bottom: black solid 1px;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    left: -7px;
+    float:left;
+}
+
+#modalDetail {
+    float: right;
+}
+
+#modalTitle {
+    font-size: 1.3em;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    top: 0;
+    bottom: 0;
+    left: 25%;
+    right: 25%;
+}
+
+/****************
+ * receipts list
+ * **************/
+
+.receiptsListItem, .accountsListItem, .shopsListItem {
+    background: url("assets/lb_circle.png") no-repeat 95% 29px, -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(238, 238, 238)),
+        color-stop(1, rgb(248, 248, 248))
+    );
+    display: block;
+    width: 90%;
+    padding: 7px 5% 0;
+    height: 85px;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+a.receiptsListItem, a.accountsListItem, a.shopsListItem {
+    color: #777;
+    font-size: 0.9em;
+    font-weight: normal;
+    line-height: 1.5;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+}
+.address {
+font-weight: bold;}
+
+.receiptsListItem .vendor {
+color: #444;
+font-size: 20px;
+font-weight: bold;
+text-shadow: 1px 1px 0 rgba(255,255,255,0.5);}
+
+.receiptsListItem .vendor, .receiptsListItem .time {
+color: #999;
+text-shadow: 1px 1px 0 rgba(255,255,255,0.5);
+font-size: 13px;}
+
+a.accountsListItem {
+    color: #999;
+    font-size: 0.9em;
+    line-height: 1.3;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+}
+
+.accountsMsg a.button, .accountsMsg a.button:hover {
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(8,181,241)),
+	    color-stop(1, rgb(156,221,249))
+	);
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.03);
+	-webkit-box-shadow: 2px 3px 8px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    display: block;
+    font-weight: bold;
+    padding: 7px 10px;
+    color: #FFFFFF;
+    width: 125px;
+    text-align: center;
+    font-size: 16px;
+    margin: 15px auto;
+    height: auto;
+    float: none;
+}
+
+.accountsMsg {
+	padding: 35px 35px 0;
+}
+
+.accountsMsg #modalBack {
+    float: none;
+    position: absolute;
+    padding-left: 0px;
+}
+
+
+.receiptsListItem .cost, .accountsListItem .nickname,
+.shopsListItem .name  {
+    color: #444;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+}
+
+.accountsListItem .nickname {
+    text-transform: uppercase;
+    color: #01B0EF;
+    font-size: 1.25em;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+}
+.accountsListItem .lastCost {
+    font-weight: bold;
+}
+.accountsListItem .activity span {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+.accountsListItem .lastDate {
+    position: absolute;
+    right: 60px;
+}
+
+.messageImageDetail {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+.messageDetail {
+    padding: 5% 4% 4% 2%;
+    width: 94%;
+    text-align: center;
+    min-height: 344px;
+}
+.messageText {
+    margin: 0 0;
+    font-size: 14px;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+    white-space: pre-wrap;
+    color: #444;
+    font-family: 'helvetica neue';
+}
+
+.merchantName {
+    font-size: 2em;
+    font-weight: normal;
+    font-family: "Rockwell STD";
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+}
+
+.merchantAddress {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #777;
+}
+
+.messageHeadline {
+    font-size: 18px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #444;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+}
+
+.merchantLocation {
+    font-size: 0.9em;
+}
+
+.messageTitle {
+    font-size: 16px;
+    color: #444;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+}
+
+.messageDate {
+    font-size: 1.6em;
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
+}
+
+.receiptDetail {
+    background: #e8e8e8;
+    padding: 4% 5% 0;
+    font-size: 1;
+    font-family: 'courier new', courier, monospace;
+    color: #666;
+    height: 84%;
+    overflow: scroll;
+    width: 90%;
+    font-weight: bold;
+}
+
+.receiptDetail header {
+text-align: center;
+margin-bottom: 25px;}
+
+.receipt-vendor {
+font-size: 1.2em;}
+
+.receiptDetail dl {
+margin-bottom: 25px;
+overflow: hidden;}
+
+.receiptDetail dd, dt {
+display: block;
+overflow: hidden;}
+
+.receiptDetail dd {
+float: right;}
+
+.receiptDetail dt {
+float: left;
+clear: left;}
+
+.receipt-cost {
+width: 66%;
+float: right;
+margin-bottom: 0;}
+
+.receipt-total {
+font-size: 1.2em;}
+
+.receiptText {
+    margin: 0;
+    width: 100%;
+}
+
+.receiptText address span {
+    display: block;}
+
+.receiptFooter {
+    height: 12%;
+    background: #788AB1;
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(0,172,240)),
+	    color-stop(0.5, rgb(25,188,242)),
+	    color-stop(0.5, rgb(39,189,243)),
+	    color-stop(1, rgb(122,216,247)),
+	    color-stop(1, rgb(206,240,252))
+	);
+    border-top: 1px solid black;
+    padding: 0 5%;
+}
+.receiptFooter .footButton {
+    -webkit-background-size: auto 100%;
+    background: white;
+    display: inline-block;
+    height: 30px;
+    margin: 5px 13% 0 0;
+    width: 20px;
+}
+.receiptFooter .footButton:last-child {
+    margin-right: 0;
+}
+textarea#annotation {
+    height: 60px;
+    margin: 10% 0% 2%;
+    padding: 3%;
+    width: 94%;
+    -webkit-box-shadow: inset 0 2px 5px rgba(0,0,0,0.075);
+	-webkit-rtl-ordering: logical;
+	-webkit-user-select: text;
+	-webkit-box-orient: vertical;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 5px;
+	font-size: 14px;
+	outline: none;
+	-webkit-appearance: none;
+}
+button.noteButton {
+    float: right;
+    margin-right: 10%;
+    margin-bottom: 25px;
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(8,181,241)),
+	    color-stop(1, rgb(156,221,249))
+	);
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.03);
+	-webkit-box-shadow: 2px 3px 8px rgba(0,0,0,0.15);
+	padding: 0px 10px;
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.33);
+    height: 31px;
+    font-weight: bold;
+    line-height: 29px;
+}
+
+.footButton#export {
+    background: url('assets/send.png') no-repeat;
+    width: 40px;
+}
+.footButton#previous {
+    background: url('assets/leftarrow.png') no-repeat;
+    width: 35px;
+}
+.footButton#next {
+    background: url('assets/rightarrow.png') no-repeat;
+    width: 40px;
+}
+.footButton#trash {
+    background: url('assets/trash.png') no-repeat;
+    width: 40px;
+}
+
+/****************
+ * Account Detail (profile, shops)
+ * **************/
+.accountDetail, .profileDisplay, .shopDisplay {
+    padding: 4px 35px;
+    min-height: 414px;
+}
+.accountDetail h3, .profileDisplay h3, .shopDisplay h3 {
+    font-size: 1.1em;
+    color: #555;
+    margin: 1em 0 0.4em 0;
+}
+#accountDescription, #personDescription, #shopDescription {
+    -webkit-box-shadow: 4px 4px 3px #888;
+    background: white;
+    display: block;
+    margin: 0 0 1em;
+    padding: 8px 0;
+    border-radius: 5px;
+    width: 100%;
+}
+#accountDescription dt, #accountDescription dd {
+    display: inline-block;
+}
+#accountDescription dt {
+    margin-left: 4%;
+    font-weight: bold;
+}
+#accountDescription dd {
+    -webkit-margin-start: 0;
+    float: right;
+    margin-right: 4%;
+    color: #01B0EF;
+}
+#accountDescription hr, #personDescription hr, #shopDescription hr {
+    border-style: solid;
+    border-color: #999;
+    border-width: 0 0 1px;
+}
+#suspendButton {
+    -webkit-box-shadow: 4px 4px 3px #888;
+    background: red;
+    border: transparent;
+    color: white;
+	border-radius: 5px;
+    display: block;
+	font-size: 18px;
+    margin: 0.4em 0;
+	padding: 8px 4%;
+    text-align: center;
+	width: 92%;
+}
+#personDescription span, #shopDescription span {
+    display: block;
+    margin: 0 4%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 92%;
+}
+/****************
+ * passcode display
+ * **************/
+#passcodeView {
+    -webkit-transition-duration: 800ms;
+    -webkit-transform: translate3d(0,0,0);
+    width: 100%;
+    height: 460px;
+    position: absolute;
+    top: 460px;
+    background: grey;
+}
+
+#passcodeView a {
+    text-decoration: none;
+    color: white;
+}
+#titlebar {
+    background: #788AB1;
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(0,172,240)),
+	    color-stop(0.5, rgb(25,188,242)),
+	    color-stop(0.5, rgb(39,189,243)),
+	    color-stop(1, rgb(122,216,247)),
+	    color-stop(1, rgb(206,240,252))
+	);
+    height: 36px;
+    border-bottom: solid 1px #666;
+    border-top: none;
+    padding: 8px 2% 0 1%;
+    color: white;
+    text-align: center;
+}
+#titlebar #title {
+    font-size: 1.3em;
+    font-weight: bold;
+    display: block;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    text-align: center;
+}
+#sideButton {
+    background: url(assets/mb_left.png) no-repeat -1px, url(assets/mb_right.png) no-repeat right, url(assets/mb_center.png) repeat-x 7px 0;
+	height: 31px;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    font-weight: bold;
+    line-height: 29px;
+    padding: 0 8px;
+    font-size: 14px;
+    font-family: "helvetica neue";
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.33);
+    float: right;
+}
+#entry {
+    background: url('assets/native_stripe.png');
+    display: block;
+    height: 127px;
+    padding: 10% 0;
+    text-align: center;
+}
+#passcodeMsg {
+    margin: 0 10% 10px;
+    color: #444;
+    font-weight: bold;
+}
+#codeEntry {
+    margin: auto;
+}
+#codeEntry div {
+    width: 55px;
+    height: 55px;
+    margin: 1px 4px;
+    display: inline-block;
+    background: white;
+    border: 1px solid black;
+}
+#codeEntry div.entered {
+    background: url('assets/black_circle.png') no-repeat, white;
+    background-position: 19px 18px;
+}
+#codeEntry div.current {
+    border: 2px solid #01B0EF;
+    margin: 0 3px;
+}
+#keypad {
+    clear: all;
+    height: 50%;
+}
+#keypad > div {
+    text-align: center;
+    padding: 3px 0 0;
+    width: 106px;
+    color: #ccc;
+    float: left;
+    font-size: 13px;
+    height: 54px;
+    letter-spacing: 3px;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.1, rgb(64,73,77)),
+        color-stop(1, rgb(128,120,143))
+    );
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+#keypad > div:first-letter {
+    color: #fff;
+    font-size: 30px;
+}
+#keypad > div:nth-child(4n-1) {
+	border-right:none;
+}
+#keypad > div:active, #keypad > div:active:first-letter {
+    background: #dedede;
+    color: black;
+}
+div#nil, div#backspace {
+    background: #dedede;
+}
+div#backspace {
+    background: url('assets/backspace.png') no-repeat, #dedede;
+    background-position: 50% 20px;
+}
+div#backspace:active {
+    background: url('assets/backspace-negative.png') no-repeat, -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.1, rgb(64,73,77)),
+        color-stop(1, rgb(128,120,143))
+    );
+    background-position: 50% 20px, 0 0;
+}
+#keypad > br {
+    clear: left;
+}
+
+/*************************
+ *  payment keypad
+ *
+ *************************/
+#paymentView {
+    display: none;
+}
+
+#wrapper {
+    position:relative;
+    z-index: 1;
+    width: 100%;
+    height:460px;
+    overflow: hidden;
+}
+
+#modalStage {
+	height: 414px;
+	position:relative;
+	z-index:1;
+	width: 100%;
+	overflow: auto;
+	background: #E8E8E8;
+}
+
+#modalStage.detail {
+	height: 376px;
+}
+
+#modalStage .list, #modalStage .detail {
+    background-color: #E8E8E8;
+    min-height: 414px;
+    overflow: hidden;
+    height: auto;
+}
+
+#modalStage .detail {
+	min-height: 376px;
+}
+
+#payment-dialog {
+	width:320px;
+	margin: 0 auto;
+	height:460px;
+	position:absolute;
+	top: 0;
+	background: url(assets/keypad/bg.png);
+	background-size: 320px 480px;
+	text-align: center;
+}
+#payment-dialog h3, h4 {
+	margin: 0;
+}
+.header {
+	background: transparent;
+	height: 37px;
+	width: 305px;
+	margin: 8px 0 5px;
+}
+#payment-description {
+	padding: 5px;
+	text-align: left;
+	font-size: 0.8em;
+	color: #777;
+}
+#payment-message {
+    display: none;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	text-align: right;
+	font-size: 20px;
+}
+#payment-lcd {
+	background: url('assets/keypad/lcd_r.png') transparent;
+	background-size: 301px 96px;
+	height: 96px;
+	width: 301px;
+	margin: 0 auto;
+	color: #23315E;
+	position: relative;
+}
+#payment-amount {
+    display: none;
+	font-size: 3em;
+	line-height: 1em;
+	text-align: right;
+	padding: 10px 15px;
+	position: absolute;
+	bottom: 0; right: 0;
+}
+#payment-accounts table {
+	margin: 8px 10px;
+	border-collapse: collapse;
+	width: 300px;
+}
+
+#payment-accounts table td {
+	border: 0;
+	padding: 0;
+	font-family: 'helvetica neue condensed';
+	font-weight: normal;
+	font-size: 15px;
+}
+
+#payment-accounts table tr td:first-child {
+	padding-right: 2px;
+}
+
+#payment-accounts table tr:first-child {
+	border-bottom: 3px solid transparent;
+}
+
+#payment-accounts a, #payment-accounts a:visited {
+	color: #939598;
+	width: 149px;
+	display: block;
+	font-size: 15px;
+	line-height: 35px;
+	text-transform: uppercase;
+	background: transparent url('assets/keypad/account-button-bg.png');
+	text-shadow: 0 1px 0 #fff;
+ 	letter-spacing: 0;
+    height: 39px;
+    font-weight: normal;
+}
+#payment-accounts a.enabled {
+	color: #000;
+}
+a.test-account { position: relative;  }
+
+a.accountName { position: relative;  }
+
+.test-balance {
+    position: absolute;
+    bottom: 2px;
+    left: 40%;
+    font-size: 11px;
+    line-height: 13px;
+    color: #555;
+    font-weight: normal;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.accountBalance {
+    position: absolute;
+    bottom: 4px;
+    left: 40%;
+    font-size: 11px;
+    line-height: 13px;
+    color: #555;
+    font-weight: normal;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#payment-keypad table {
+	margin: 0 10px;
+	width: 300px;
+	height: 207px;
+	border-collapse: collapse;
+}
+#payment-keypad table tr td {
+	padding: 0 1px 2px 0;
+	width: 74px;
+	height: 50px;
+}
+
+#payment-keypad table tr td a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	position: relative;
+	text-indent: -999em;
+}
+
+#payment-keypad table tr td a[name="1"] {
+	background: url('assets/keypad/key_1.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="2"] {
+	background: url('assets/keypad/key_2.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="3"] {
+	background: url('assets/keypad/key_3.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="no"] {
+	background: url('assets/keypad/key_no.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="4"] {
+	background: url('assets/keypad/key_4.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="5"] {
+	background: url('assets/keypad/key_5.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="6"] {
+	background: url('assets/keypad/key_6.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="cancel"] {
+	background: url('assets/keypad/key_cancel.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="7"] {
+	background: url('assets/keypad/key_7.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="8"] {
+	background: url('assets/keypad/key_8.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="9"] {
+	background: url('assets/keypad/key_9.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="ok"] {
+	background: url('assets/keypad/key_ok.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="corr"] {
+	background: url('assets/keypad/key_corr.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="."] {
+	background: url('assets/keypad/key_dot.png') no-repeat;
+}
+
+#payment-keypad table tr td a[name="0"] {
+	background: url('assets/keypad/key_0.png') no-repeat;
+}
+.keypad .numbers {
+    padding: 0;
+    font-size: 26px !important;
+    line-height: 16px !important;
+}
+.keypad .letters {
+    color: #777;
+    font-weight: bold;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 74px;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+    padding:0;
+    margin: 0;
+}
+
+.active { background: #b4d9ff url('assets/keypad/button-bg-active.png') top left no-repeat !important;  }
+#payment-accounts a.active { background: #b4d9ff url('assets/keypad/account-button-bg-active.png') top left no-repeat !important;  }
+
+#receipts-link {
+    background: url('assets/keypad/info-button.png');
+    background-size: 32px 32px;
+    float: right;
+    position: absolute;
+	display: block;
+	height: 32px;
+	width: 32px;
+    right: 12px;
+    opacity: 0.4;
+}
+.keypad-logo {
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 14px;
+}
+
+.payment-failed {
+	color: #a00;
+	background-color: #F9E1B3;
+}
+.success {
+	color: #0a0;
+	background-color: #C0F9B9;
+}
+
+
+
+/* Retina */ 
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+select.securityQuestion, select#userPrefix, select.matte {
+	background: url(assets/dropdown_r.png) right no-repeat #fff;
+	background-size: 37px 35px
+}
+
+#receipts-link {
+    background: url('assets/keypad/info-button_r.png');
+    background-size: 32px 32px;
+}
+
+.modalButton {
+    background: url(assets/mb_left_r.png) no-repeat 0 0, url(assets/mb_right_r.png) no-repeat 0 right, url(assets/mb_center_r.png) repeat-x 7px 0;
+    background-size: 7px 31px, 7px 31px, 1px 31px;
+    line-height: 31px;
+}
+
+#modalBack {
+	background: url(assets/mbb_left_r.png) no-repeat 0 left, url(assets/mb_right_r.png) no-repeat 0 right, url(assets/mb_center_r.png) repeat-x 17px 0;
+	background-size: 17px 31px, 7px 31px, 1px 31px;
+}
+
+a.overviewButton {
+	background: url("assets/ob_arrow_r.png") no-repeat 95% 12px, -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(238, 238, 238)),
+        color-stop(1, rgb(248, 248, 248))
+    );
+    background-size: 12px 20px, 100% 100%;
+}
+
+.receiptsListItem, .accountsListItem, .shopsListItem {
+    background: url("assets/lb_circle_r.png") no-repeat 95% 29px, -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(238, 238, 238)),
+        color-stop(1, rgb(248, 248, 248))
+    );
+    background-size: 34px 34px, 100% 100%;
+}
+
+#payment-dialog {
+	background: url(assets/keypad/bg_r.png);
+	background-size: 320px 480px;
+}
+
+#payment-accounts a, #payment-accounts a:visited {
+	background: transparent url('assets/keypad/account-button-bg_r.png') no-repeat;
+	background-size: 148px 38px;
+}
+
+#payment-keypad table tr td {
+	padding: 0 1px 1px 0;
+	width: 74px;
+	height: 51px;
+}
+
+#payment-keypad table tr td a[name="1"] {
+	background: url('assets/keypad/key_1_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="2"] {
+	background: url('assets/keypad/key_2_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="3"] {
+	background: url('assets/keypad/key_3_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="no"] {
+	background: url('assets/keypad/key_no_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="4"] {
+	background: url('assets/keypad/key_4_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="5"] {
+	background: url('assets/keypad/key_5_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="6"] {
+	background: url('assets/keypad/key_6_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="cancel"] {
+	background: url('assets/keypad/key_cancel_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="7"] {
+	background: url('assets/keypad/key_7_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="8"] {
+	background: url('assets/keypad/key_8_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="9"] {
+	background: url('assets/keypad/key_9_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="ok"] {
+	background: url('assets/keypad/key_ok_r.png') no-repeat;
+	background-size: 74px 103px;
+}
+
+#payment-keypad table tr td a[name="corr"] {
+	background: url('assets/keypad/key_corr_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="."] {
+	background: url('assets/keypad/key_dot_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+#payment-keypad table tr td a[name="0"] {
+	background: url('assets/keypad/key_0_r.png') no-repeat;
+	background-size: 74px 51px;
+}
+
+}

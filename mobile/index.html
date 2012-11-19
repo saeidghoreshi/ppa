@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en"> 
+<head>
+    <meta charset="utf-8" />
+    <title>PayPhoneApp</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" href="mobile.css" type="text/css">
+</head>
+<body class='mobile'>
+    <!-- main, mobile web styled view -->
+    <div id="wrapper">
+    <div id='mainContent'>
+        <div id='mainScroller' class='scroller'>
+            <div id="mainLogo">
+               <img src="assets/in-app-logo.png" width="74" height="45" />
+            </div>
+
+            <div id='mainStage'>
+            </div>
+
+            <!--p class="copyright"><a href="mailto:general@payphoneapp.com">PayPhoneApp.com</a></p-->
+        </div>
+    </div>
+
+    <div id="paymentView">
+		<div class='dialog' id='payment-dialog'>
+			<div class='header'>
+                   <a id='logo-link' class="local" href="javascript:showTemplate('overview');"><img src="assets/in-app-logo.png" class="keypad-logo" width="74" height="45" /></a>
+				<a id='receipts-link' class="local" href='#overview'><!-- --></a>
+			</div>
+			<div id='payment-lcd'>
+					<div id='payment-description'>
+						<strong>Checking for Payment Requests...</strong>
+					</div>
+
+                    <div id='payment-message'></div>
+                    <div id='payment-amount'></div>
+
+			</div>
+			<form method='post' action='payments#submit-payment'>
+				<div id='payment-accounts'>
+					<table>
+						<tr>
+								<td><a href="javascript:hideModal();PPA.acctFormAction = 'add';showTemplate('account_type');" name='account_id' class="accountName" data-account-balance="0" data-merchant-id="0" data-account-type="0">Add Account</a></td>
+								<td><a href="javascript:hideModal();PPA.acctFormAction = 'add';showTemplate('account_type');" name='account_id' class="accountName" data-account-balance="0" data-merchant-id="0" data-account-type="0">Add Account</a></td>
+						</tr>
+						<tr>
+								<td><a href="javascript:hideModal();PPA.acctFormAction = 'add';showTemplate('account_type');" name='account_id' class="accountName" data-account-balance="0" data-merchant-id="0" data-account-type="0">Add Account</a></td>
+								<td><a href="javascript:hideModal();PPA.acctFormAction = 'add';showTemplate('account_type');" name='account_id' class="accountName" data-account-balance="0" data-merchant-id="0" data-account-type="0">Add Account</a></td>
+						</tr>
+					</table>
+				</div>
+				<div id='payment-keypad'>
+					<table class='keypad'>
+						<tr>
+							<td><a href='#' name='1' class='numbers'>1</a></td>
+							<td><a href='#' name='2' class='numbers'>2<div class='letters'>ABC</div></a></td>
+							<td><a href='#' name='3' class='numbers'>3<div class='letters'>DEF</div></a></td>
+							<td><a href='#' class='no bold' name='no'>NO</a></td>
+						</tr>
+						<tr>
+							<td><a href='#' name='4' class='numbers'>4<div class='letters'>GHI</div></a></td>
+							<td><a href='#' name='5' class='numbers'>5<div class='letters'>JKL</div></a></td>
+							<td><a href='#' name='6' class='numbers'>6<div class='letters'>MNO</div></a></td>
+							<td><a href='#' class='cancel' name='cancel'>CANCEL</a></td>
+						</tr>
+						<tr>
+							<td><a href='#' name='7' class='numbers'>7<div class='letters'>PQRS</div></a></td>
+							<td><a href='#' name='8' class='numbers'>8<div class='letters'>TUV</div></a></td>
+							<td><a href='#' name='9' class='numbers'>9<div class='letters'>WXYZ</div></a></td>
+							<td rowspan='2'><a href='#' class='ok bold' name='ok'>OK</a></td>
+						</tr>
+						<tr>
+							<td><a href='#' class='corr' name='corr'>CORR</a></td>
+							<td><a href='#' name='0' class='numbers'>0</a></td>
+							<td><a href='#' name='.' class='numbers'>.</a></td>
+						</tr>
+					</table>
+				</div>
+			</form>
+		</div>
+    </div>
+
+    <!-- modal display for accounts, receipts -->
+    <div id='modalView'>
+        <div id='modalHeader'>
+            <span id='modalTitle'></span>
+            <span class='modalButton' id='modalBack'></span>
+            <span class='modalButton' id='modalDetail'></span>
+        </div>
+        <div id="modalWrapper">
+        </div>
+    </div>
+
+    <!-- modal display for user's passcode enter -->
+    <div id='passcodeView'>
+        <div id="titlebar">
+            <div id="sideButton">Clear</div>
+            <span id="title">Enter Passcode</span>
+        </div>
+
+        <div id="entry">
+            <p id="passcodeMsg"></p>
+            <div id="codeEntry">
+                <div id="num1"></div>
+                <div id="num2"></div>
+                <div id="num3"></div>
+                <div id="num4"></div>
+            </div>
+            <br clear="left">
+        </div>
+
+        <div id="keypad">
+            <div id="key-1">1</div>
+            <div id="key-2">2<br>ABC</div>
+            <div id="key-3">3<br>DEF</div><br>
+            <div id="key-4">4<br>GHI</div>
+            <div id="key-5">5<br>JKL</div>
+            <div id="key-6">6<br>MNO</div><br>
+            <div id="key-7">7<br>PQRS</div>
+            <div id="key-8">8<br>TUV</div>
+            <div id="key-9">9<br>WXYZ</div><br>
+            <div id="nil"></div>
+            <div id="key-0">0</div>
+            <div id="backspace"></div>
+        </div>
+    </div>
+	</div>
+    <!-- external dependencies -->
+    <script src="phonegap-1.1.0.js"></script>
+    <script src="ext/xui.js"></script>
+    <script src="ext/mustache.js"></script>
+    <script src="ext/iscroll.js"></script>
+    <script src="ext/md5.js"></script>
+
+    <!-- application code -->
+    <script src="js/base.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/passcode.js"></script>
+    <script src="js/remote.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/keypad.js"></script>
+    <script src="js/payment-user.js"></script>
+    <script src="js/geo.js"></script>
+    <script src="js/thumbs.0.4.min.js"></script>
+
+    <!-- dev purposes -->
+    <script src="js-dev/stub_data.js"></script>
+    <script src="js-dev/dev.js"></script>
+    <script src="js-dev/dev-builds.js"></script>
+    <img src='https://www.payphoneapp.com/images/pixel.jpg' onerror='alert("Please check your connection and relaunch your app");' width="0" height="0" style="display: none;"/>     
+</body>
+</html>

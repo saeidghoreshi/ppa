@@ -1,0 +1,247 @@
+10:34:18 07/25/11 caller [info] #####SOAP#####
+10:34:18 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CreateAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <accountType>PERSONAL</accountType>
+    <name>
+        <salutation>Dr.</salutation>
+        <firstName>Bonzop</firstName>
+        <middleName>Simore</middleName>
+        <lastName>Zaius</lastName>
+    </name>
+    <dateOfBirth>1968-01-01</dateOfBirth>
+    <address>
+        <line1>1968 Ape Way</line1>
+        <line2>Apt 123</line2>
+        <city>Austin</city>
+        <state>TX</state>
+        <postalCode>78750</postalCode>
+        <countryCode>US</countryCode>
+    </address>
+    <contactPhoneNumber>512-691-4160</contactPhoneNumber>
+    <currencyCode>USD</currencyCode>
+    <citizenshipCountryCode>US</citizenshipCountryCode>
+    <preferredLanguageCode>en_US</preferredLanguageCode>
+    <notificationURL>http://stranger.paypal.com/cgi-bin/ipntest.cgi</notificationURL>
+    <emailAddress>testaccount272187@paypal.com</emailAddress>
+    <registrationType>WEB</registrationType>
+    <partnerField1>p1</partnerField1>
+    <partnerField2>p2</partnerField2>
+    <partnerField3>p3</partnerField3>
+    <partnerField4>p4</partnerField4>
+    <partnerField5>p5</partnerField5>
+    <sandboxEmailAddress>Platform.sdk.seller@gmail.com</sandboxEmailAddress>
+</CreateAccountRequest></soap:Body>
+</soap:Envelope>
+
+10:34:31 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:CreateAccountResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2011-07-25T03:34:31.066-07:00</timestamp><ack>Success</ack><correlationId>f5b64a84c4c43</correlationId><build>1829457</build></responseEnvelope><createAccountKey>AA-59H16550CS807820T</createAccountKey><execStatus>COMPLETED</execStatus><redirectURL>https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_hostedua-flow&amp;encrypted_second_auth_code=AgJ5j.nSIVAZtwboLvfDQl3uRUsyMrbxjjD9QXs9Kz1uy1VeAyNrmn0SOW4QXA5EK2Q&amp;encrypted_id=QB2A39FAW8XN8</redirectURL><accountId>RJNWTVY27CHMW</accountId></ns2:CreateAccountResponse></soapenv:Body></soapenv:Envelope>
+10:34:31 07/25/11 caller [info] #####SOAP#####
+10:34:31 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CreateAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <accountType>BUSINESS</accountType>
+    <name>
+        <salutation>Dr.</salutation>
+        <firstName>Bonzop</firstName>
+        <middleName>Simore</middleName>
+        <lastName>Zaius</lastName>
+    </name>
+    <dateOfBirth>1968-01-01</dateOfBirth>
+    <address>
+        <line1>1968 Ape Way</line1>
+        <line2>Apt 123</line2>
+        <city>Austin</city>
+        <state>TX</state>
+        <postalCode>78750</postalCode>
+        <countryCode>US</countryCode>
+    </address>
+    <contactPhoneNumber>512-691-4160</contactPhoneNumber>
+    <currencyCode>USD</currencyCode>
+    <citizenshipCountryCode>US</citizenshipCountryCode>
+    <preferredLanguageCode>en_US</preferredLanguageCode>
+    <notificationURL>http://stranger.paypal.com/cgi-bin/ipntest.cgi</notificationURL>
+    <emailAddress>testaccount102289@paypal.com</emailAddress>
+    <registrationType>WEB</registrationType>
+    <createAccountWebOptions />
+    <partnerField1>p1</partnerField1>
+    <partnerField2>p2</partnerField2>
+    <partnerField3>p3</partnerField3>
+    <partnerField4>p4</partnerField4>
+    <partnerField5>p5</partnerField5>
+    <businessInfo>
+        <businessName>Bonzop</businessName>
+        <businessAddress>
+            <line1>1968 Ape Way</line1>
+            <line2>Apt 123</line2>
+            <city>Austin</city>
+            <state>TX</state>
+            <postalCode>78750</postalCode>
+            <countryCode>US</countryCode>
+        </businessAddress>
+        <workPhone>512-691-4160</workPhone>
+        <category>1001</category>
+        <subCategory>2002</subCategory>
+        <customerServicePhone>512-691-4160</customerServicePhone>
+        <customerServiceEmail>testaccount1102209@paypal.com</customerServiceEmail>
+        <webSite>https://www.x.com</webSite>
+        <dateOfEstablishment>1968-01-01</dateOfEstablishment>
+        <businessType>INDIVIDUAL</businessType>
+        <averagePrice>100</averagePrice>
+        <averageMonthlyVolume>100</averageMonthlyVolume>
+        <percentageRevenueFromOnline>100</percentageRevenueFromOnline>
+        <salesVenue>WEB</salesVenue>
+    </businessInfo>
+    <sandboxEmailAddress>Platform.sdk.seller@gmail.com</sandboxEmailAddress>
+</CreateAccountRequest></soap:Body>
+</soap:Envelope>
+
+10:34:50 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:CreateAccountResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2011-07-25T03:34:50.883-07:00</timestamp><ack>Success</ack><correlationId>6a5af3eec771f</correlationId><build>1829457</build></responseEnvelope><createAccountKey>AA-1BS95060UY931213F</createAccountKey><execStatus>COMPLETED</execStatus><redirectURL>https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_hostedua-flow&amp;encrypted_second_auth_code=AwYlyXN08tEVvn3srplxRllNsy2bvvKKVUX0e47rbLXi7tQPWQk5GfGQ.W5iLBLoDdM&amp;encrypted_id=TS4DJNG27J93J</redirectURL><accountId>E6WQGWE4GP5JG</accountId></ns2:CreateAccountResponse></soapenv:Body></soapenv:Envelope>
+10:34:50 07/25/11 caller [info] #####SOAP#####
+10:34:50 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddBankAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>platfo_1255611349_biz@gmail.com</emailAddress>
+    <bankCountryCode>US</bankCountryCode>
+    <bankName>Huntington Bank</bankName>
+    <routingNumber>021473030</routingNumber>
+    <bankAccountType>CHECKING</bankAccountType>
+    <bankAccountNumber>165762</bankAccountNumber>
+    <confirmationType>WEB</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddBankAccountDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddBankAccount.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddBankAccountRequest></soap:Body>
+</soap:Envelope>
+
+10:34:53 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:AddBankAccountResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2011-07-25T03:34:53.387-07:00</timestamp><ack>Success</ack><correlationId>196fbe34cc323</correlationId><build>1829457</build></responseEnvelope><execStatus>WEB_URL_VERIFICATION_NEEDED</execStatus><redirectURL>https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_adaptive_account_add_bank&amp;token=AAF-5A4476862F308942R</redirectURL><fundingSourceKey>AAF-5A4476862F308942R</fundingSourceKey></ns2:AddBankAccountResponse></soapenv:Body></soapenv:Envelope>
+10:34:53 07/25/11 caller [info] #####SOAP#####
+10:34:53 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddBankAccountRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>testaccount272187@paypal.com</emailAddress>
+    <createAccountKey>AA-59H16550CS807820T</createAccountKey>
+    <bankCountryCode>US</bankCountryCode>
+    <bankName>Huntington Bank</bankName>
+    <routingNumber>021473030</routingNumber>
+    <bankAccountType>CHECKING</bankAccountType>
+    <bankAccountNumber>167921</bankAccountNumber>
+    <confirmationType>NONE</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddBankAccountDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddBankAccount.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddBankAccountRequest></soap:Body>
+</soap:Envelope>
+
+10:34:58 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:AddBankAccountResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2011-07-25T03:34:58.852-07:00</timestamp><ack>Success</ack><correlationId>19858310ccdbf</correlationId><build>1829457</build></responseEnvelope><execStatus>FUNDING_SOURCE_ADDED</execStatus><fundingSourceKey>AAF-44D22235PW647825K</fundingSourceKey></ns2:AddBankAccountResponse></soapenv:Body></soapenv:Envelope>
+10:34:58 07/25/11 caller [info] #####SOAP#####
+10:34:58 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddPaymentCardRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>platfo_1255611349_biz@gmail.com</emailAddress>
+    <nameOnCard>
+        <firstName>John</firstName>
+        <lastName>Deo</lastName>
+    </nameOnCard>
+    <billingAddress>
+        <line1>1 Main St</line1>
+        <line2>2nd cross</line2>
+        <city>San Jose</city>
+        <state>CA</state>
+        <postalCode>95131</postalCode>
+        <countryCode>US</countryCode>
+    </billingAddress>
+    <cardNumber>4943871033202264</cardNumber>
+    <cardType>Visa</cardType>
+    <expirationDate>
+        <month>01</month>
+        <year>2014</year>
+    </expirationDate>
+    <confirmationType>WEB</confirmationType>
+    <webOptions>
+        <returnUrl>http://localhost:8082/AddPaymentCardDetails.php</returnUrl>
+        <cancelUrl>http://localhost:8082/AddPaymentCard.php</cancelUrl>
+        <returnUrlDescription>returnurl</returnUrlDescription>
+        <cancelUrlDescription>cancelurl</cancelUrlDescription>
+    </webOptions>
+</AddPaymentCardRequest></soap:Body>
+</soap:Envelope>
+
+10:35:01 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:AddPaymentCardResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2011-07-25T03:35:01.706-07:00</timestamp><ack>Success</ack><correlationId>ad1fc8f0ce392</correlationId><build>1829457</build></responseEnvelope><execStatus>WEB_URL_VERIFICATION_NEEDED</execStatus><redirectURL>https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_adaptive_account_add_payment_card&amp;token=AAF-8WK46207XT9556152</redirectURL><fundingSourceKey>AAF-8WK46207XT9556152</fundingSourceKey></ns2:AddPaymentCardResponse></soapenv:Body></soapenv:Envelope>
+10:35:01 07/25/11 caller [info] #####SOAP#####
+10:35:01 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><AddPaymentCardRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>testaccount102289@paypal.com</emailAddress>
+    <createAccountKey>AA-1BS95060UY931213F</createAccountKey>
+    <nameOnCard>
+        <firstName>John</firstName>
+        <lastName>Deo</lastName>
+    </nameOnCard>
+    <billingAddress>
+        <line1>1 Main St</line1>
+        <line2>2nd cross</line2>
+        <city>San Jose</city>
+        <state>CA</state>
+        <postalCode>95131</postalCode>
+        <countryCode>US</countryCode>
+    </billingAddress>
+    <cardNumber>4590349484207575</cardNumber>
+    <cardType>Visa</cardType>
+    <expirationDate>
+        <month>01</month>
+        <year>2014</year>
+    </expirationDate>
+    <cardVerificationNumber>956</cardVerificationNumber>
+    <confirmationType>NONE</confirmationType>
+</AddPaymentCardRequest></soap:Body>
+</soap:Envelope>
+
+10:35:19 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:AddPaymentCardResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2011-07-25T03:35:19.086-07:00</timestamp><ack>Success</ack><correlationId>a0754880cee9d</correlationId><build>1829457</build></responseEnvelope><execStatus>FUNDING_SOURCE_ADDED</execStatus><fundingSourceKey>AAF-1HX1406767757025K</fundingSourceKey></ns2:AddPaymentCardResponse></soapenv:Body></soapenv:Envelope>
+10:35:19 07/25/11 caller [info] #####SOAP#####
+10:35:19 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetVerifiedStatusRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <emailAddress>platfo@paypal.com</emailAddress>
+    <matchCriteria>NAME</matchCriteria>
+    <firstName>Bonzop</firstName>
+    <lastName>Zaius</lastName>
+</GetVerifiedStatusRequest></soap:Body>
+</soap:Envelope>
+
+10:35:20 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header /><soapenv:Body><ns2:GetVerifiedStatusResponse xmlns:ns2="http://svcs.paypal.com/types/aa"><responseEnvelope><timestamp>2011-07-25T03:35:20.723-07:00</timestamp><ack>Success</ack><correlationId>c07273e3d3192</correlationId><build>1829457</build></responseEnvelope><accountStatus>UNVERIFIED</accountStatus></ns2:GetVerifiedStatusResponse></soapenv:Body></soapenv:Envelope>

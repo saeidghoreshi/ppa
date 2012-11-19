@@ -1,0 +1,848 @@
+10:34:59 07/25/11 caller [info] #####SOAP#####
+10:34:59 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PayRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <actionType>CREATE</actionType>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255612361_per@gmail.com</email>
+        </receiver>
+        <receiver>
+            <amount>1.0</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+    <senderEmail>platfo_1255077030_biz@gmail.com</senderEmail>
+    <returnUrl>http://www.paypal.com</returnUrl>
+</PayRequest></soap:Body>
+</soap:Envelope>
+
+10:35:07 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PayResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:07.241-07:00</timestamp><ack>Success</ack><correlationId>7e179471458a9</correlationId><build>1971792</build></responseEnvelope><payKey>AP-8T165325RS3941808</payKey><paymentExecStatus>CREATED</paymentExecStatus><defaultFundingPlan><fundingPlanId>0</fundingPlanId><fundingAmount><code>USD</code><amount>2.00</amount></fundingAmount><charge><charge><code>USD</code><amount>17.00</amount></charge><fundingSource><lastFourOfAccountNumber>4228</lastFourOfAccountNumber><type>BANK_DELAYED</type></fundingSource></charge></defaultFundingPlan></ns2:PayResponse></soapenv:Body></soapenv:Envelope>
+10:35:07 07/25/11 caller [info] #####SOAP#####
+10:35:07 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><SetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-8T165325RS3941808</payKey>
+</SetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+10:35:09 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:SetPaymentOptionsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:09.419-07:00</timestamp><ack>Success</ack><correlationId>0ad8e10946f4e</correlationId><build>1971792</build></responseEnvelope></ns2:SetPaymentOptionsResponse></soapenv:Body></soapenv:Envelope>
+10:35:09 07/25/11 caller [info] #####SOAP#####
+10:35:09 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><ExecutePaymentRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-8T165325RS3941808</payKey>
+</ExecutePaymentRequest></soap:Body>
+</soap:Envelope>
+
+10:35:17 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:ExecutePaymentResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:17.816-07:00</timestamp><ack>Success</ack><correlationId>5c1ac696477cd</correlationId><build>1971792</build></responseEnvelope><paymentExecStatus>COMPLETED</paymentExecStatus></ns2:ExecutePaymentResponse></soapenv:Body></soapenv:Envelope>
+10:35:17 07/25/11 caller [info] #####SOAP#####
+10:35:17 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-8T165325RS3941808</payKey>
+</GetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+10:35:19 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:GetPaymentOptionsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:19.857-07:00</timestamp><ack>Success</ack><correlationId>41a59bb64057f</correlationId><build>1971792</build></responseEnvelope></ns2:GetPaymentOptionsResponse></soapenv:Body></soapenv:Envelope>
+10:35:19 07/25/11 caller [info] #####SOAP#####
+10:35:19 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PayRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <actionType>PAY</actionType>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255612361_per@gmail.com</email>
+        </receiver>
+        <receiver>
+            <amount>1.0</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+    <senderEmail>platfo_1255077030_biz@gmail.com</senderEmail>
+    <returnUrl>http://www.PayPal.com</returnUrl>
+</PayRequest></soap:Body>
+</soap:Envelope>
+
+10:35:31 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PayResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:31.755-07:00</timestamp><ack>Success</ack><correlationId>385ed41940e6d</correlationId><build>1971792</build></responseEnvelope><payKey>AP-9K715922PR288452T</payKey><paymentExecStatus>COMPLETED</paymentExecStatus></ns2:PayResponse></soapenv:Body></soapenv:Envelope>
+10:35:31 07/25/11 caller [info] #####SOAP#####
+10:35:31 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PaymentDetailsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-9K715922PR288452T</payKey>
+</PaymentDetailsRequest></soap:Body>
+</soap:Envelope>
+
+10:35:38 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PaymentDetailsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:37.824-07:00</timestamp><ack>Success</ack><correlationId>38710b0343c31</correlationId><build>1971792</build></responseEnvelope><cancelUrl>http://www.paypal.com</cancelUrl><currencyCode>USD</currencyCode><paymentInfoList><paymentInfo><transactionId>3E046402LP133952W</transactionId><transactionStatus>PENDING</transactionStatus><receiver><amount>1.00</amount><email>platfo_1255612361_per@gmail.com</email><primary>false</primary><paymentType>SERVICE</paymentType></receiver><refundedAmount>0.00</refundedAmount><pendingRefund>false</pendingRefund><senderTransactionId>9KS24641AB0863158</senderTransactionId><senderTransactionStatus>PENDING</senderTransactionStatus><pendingReason>ECHECK</pendingReason></paymentInfo><paymentInfo><transactionId>95W02686RL8979504</transactionId><transactionStatus>PENDING</transactionStatus><receiver><amount>1.00</amount><email>platfo_1255611349_biz@gmail.com</email><primary>false</primary><paymentType>SERVICE</paymentType></receiver><refundedAmount>0.00</refundedAmount><pendingRefund>false</pendingRefund><senderTransactionId>51X44244AX580152L</senderTransactionId><senderTransactionStatus>PENDING</senderTransactionStatus><pendingReason>ECHECK</pendingReason></paymentInfo></paymentInfoList><returnUrl>http://www.PayPal.com</returnUrl><senderEmail>platfo_1255077030_biz@gmail.com</senderEmail><status>COMPLETED</status><payKey>AP-9K715922PR288452T</payKey><actionType>PAY</actionType><feesPayer>EACHRECEIVER</feesPayer><reverseAllParallelPaymentsOnError>false</reverseAllParallelPaymentsOnError><sender><email>platfo_1255077030_biz@gmail.com</email><useCredentials>false</useCredentials></sender></ns2:PaymentDetailsResponse></soapenv:Body></soapenv:Envelope>
+10:35:38 07/25/11 caller [info] #####SOAP#####
+10:35:38 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><RefundRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <currencyCode>USD</currencyCode>
+    <payKey>AP-9K715922PR288452T</payKey>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+</RefundRequest></soap:Body>
+</soap:Envelope>
+
+10:35:42 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:RefundResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:42.238-07:00</timestamp><ack>Success</ack><correlationId>b4002d274e7e3</correlationId><build>1971792</build></responseEnvelope><currencyCode>USD</currencyCode><refundInfoList><refundInfo><receiver><amount>1.00</amount><email>platfo_1255611349_biz@gmail.com</email></receiver><refundStatus>NO_API_ACCESS_TO_RECEIVER</refundStatus></refundInfo></refundInfoList></ns2:RefundResponse></soapenv:Body></soapenv:Envelope>
+10:35:42 07/25/11 caller [info] #####SOAP#####
+10:35:42 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PreapprovalRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <endingDate>2011-08-25</endingDate>
+    <maxNumberOfPayments>10</maxNumberOfPayments>
+    <maxTotalAmountOfAllPayments>50.00</maxTotalAmountOfAllPayments>
+    <returnUrl>http://www.paypal.com</returnUrl>
+    <senderEmail>platfo_1255076101_per@gmail.com</senderEmail>
+    <startingDate>2011-07-25</startingDate>
+</PreapprovalRequest></soap:Body>
+</soap:Envelope>
+
+10:35:44 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PreapprovalResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:44.035-07:00</timestamp><ack>Success</ack><correlationId>c52ce99246522</correlationId><build>1971792</build></responseEnvelope><preapprovalKey>PA-2SE619859E612243X</preapprovalKey></ns2:PreapprovalResponse></soapenv:Body></soapenv:Envelope>
+10:35:44 07/25/11 caller [info] #####SOAP#####
+10:35:44 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PreapprovalDetailsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <preapprovalKey>PA-2SE619859E612243X</preapprovalKey>
+</PreapprovalDetailsRequest></soap:Body>
+</soap:Envelope>
+
+10:35:45 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PreapprovalDetailsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:45.598-07:00</timestamp><ack>Success</ack><correlationId>4a893a184ff1a</correlationId><build>1971792</build></responseEnvelope><approved>false</approved><cancelUrl>http://www.paypal.com</cancelUrl><curPayments>0</curPayments><curPaymentsAmount>0.00</curPaymentsAmount><curPeriodAttempts>0</curPeriodAttempts><currencyCode>USD</currencyCode><dateOfMonth>0</dateOfMonth><dayOfWeek>NO_DAY_SPECIFIED</dayOfWeek><endingDate>2011-08-25T23:59:43.000-07:00</endingDate><maxNumberOfPayments>10</maxNumberOfPayments><maxTotalAmountOfAllPayments>50.00</maxTotalAmountOfAllPayments><paymentPeriod>NO_PERIOD_SPECIFIED</paymentPeriod><pinType>NOT_REQUIRED</pinType><returnUrl>http://www.paypal.com</returnUrl><senderEmail>platfo_1255076101_per@gmail.com</senderEmail><startingDate>2011-07-25T00:00:43.000-07:00</startingDate><status>ACTIVE</status><displayMaxTotalAmount>false</displayMaxTotalAmount></ns2:PreapprovalDetailsResponse></soapenv:Body></soapenv:Envelope>
+10:35:45 07/25/11 caller [info] #####SOAP#####
+10:35:45 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CancelPreapprovalRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <preapprovalKey>PA-2SE619859E612243X</preapprovalKey>
+</CancelPreapprovalRequest></soap:Body>
+</soap:Envelope>
+
+10:35:47 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:CancelPreapprovalResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:47.422-07:00</timestamp><ack>Success</ack><correlationId>aaf5cf8c5063c</correlationId><build>1971792</build></responseEnvelope></ns2:CancelPreapprovalResponse></soapenv:Body></soapenv:Envelope>
+10:35:47 07/25/11 caller [info] #####SOAP#####
+10:35:47 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><ConvertCurrencyRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <baseAmountList>
+        <currency>
+            <code>GBP</code>
+            <amount>1.00</amount>
+        </currency>
+        <currency>
+            <code>EUR</code>
+            <amount>100.00</amount>
+        </currency>
+    </baseAmountList>
+    <convertToCurrencyList>
+        <currencyCode>USD</currencyCode>
+        <currencyCode>CAD</currencyCode>
+        <currencyCode>JPY</currencyCode>
+    </convertToCurrencyList>
+</ConvertCurrencyRequest></soap:Body>
+</soap:Envelope>
+
+10:35:49 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:ConvertCurrencyResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T03:35:49.487-07:00</timestamp><ack>Success</ack><correlationId>8f05ab8250c86</correlationId><build>1971792</build></responseEnvelope><estimatedAmountTable><currencyConversionList><baseAmount><code>GBP</code><amount>1.00</amount></baseAmount><currencyList><currency><code>USD</code><amount>1.94</amount></currency><currency><code>CAD</code><amount>2.17</amount></currency><currency><code>JPY</code><amount>231</amount></currency></currencyList></currencyConversionList><currencyConversionList><baseAmount><code>EUR</code><amount>100.00</amount></baseAmount><currencyList><currency><code>USD</code><amount>132.88</amount></currency><currency><code>CAD</code><amount>147.93</amount></currency><currency><code>JPY</code><amount>15764</amount></currency></currencyList></currencyConversionList></estimatedAmountTable></ns2:ConvertCurrencyResponse></soapenv:Body></soapenv:Envelope>
+12:04:52 07/25/11 caller [info] #####SOAP#####
+12:04:52 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PayRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <actionType>CREATE</actionType>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255612361_per@gmail.com</email>
+        </receiver>
+        <receiver>
+            <amount>1.0</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+    <senderEmail>platfo_1255077030_biz@gmail.com</senderEmail>
+    <returnUrl>http://www.paypal.com</returnUrl>
+</PayRequest></soap:Body>
+</soap:Envelope>
+
+12:04:59 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PayResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:04:59.448-07:00</timestamp><ack>Success</ack><correlationId>018c047561c40</correlationId><build>1971792</build></responseEnvelope><payKey>AP-60C195849W973460W</payKey><paymentExecStatus>CREATED</paymentExecStatus><defaultFundingPlan><fundingPlanId>0</fundingPlanId><fundingAmount><code>USD</code><amount>2.00</amount></fundingAmount><charge><charge><code>USD</code><amount>17.00</amount></charge><fundingSource><lastFourOfAccountNumber>4228</lastFourOfAccountNumber><type>BANK_DELAYED</type></fundingSource></charge></defaultFundingPlan></ns2:PayResponse></soapenv:Body></soapenv:Envelope>
+12:04:59 07/25/11 caller [info] #####SOAP#####
+12:04:59 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><SetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-60C195849W973460W</payKey>
+</SetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+12:05:02 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:SetPaymentOptionsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:02.987-07:00</timestamp><ack>Success</ack><correlationId>272ffe28633a7</correlationId><build>1971792</build></responseEnvelope></ns2:SetPaymentOptionsResponse></soapenv:Body></soapenv:Envelope>
+12:05:02 07/25/11 caller [info] #####SOAP#####
+12:05:02 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><ExecutePaymentRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-60C195849W973460W</payKey>
+</ExecutePaymentRequest></soap:Body>
+</soap:Envelope>
+
+12:05:10 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:ExecutePaymentResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:10.773-07:00</timestamp><ack>Success</ack><correlationId>d67253e56cf86</correlationId><build>1971792</build></responseEnvelope><paymentExecStatus>COMPLETED</paymentExecStatus></ns2:ExecutePaymentResponse></soapenv:Body></soapenv:Envelope>
+12:05:10 07/25/11 caller [info] #####SOAP#####
+12:05:10 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-60C195849W973460W</payKey>
+</GetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+12:05:12 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:GetPaymentOptionsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:13.042-07:00</timestamp><ack>Success</ack><correlationId>e9b9393d65b34</correlationId><build>1971792</build></responseEnvelope></ns2:GetPaymentOptionsResponse></soapenv:Body></soapenv:Envelope>
+12:05:12 07/25/11 caller [info] #####SOAP#####
+12:05:12 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-60C195849W973460W</payKey>
+</GetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+12:05:15 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><soapenv:Fault xmlns:axis2ns323520="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns323520:Server</faultcode><faultstring>payKey AP-60C195849W973460W has already been used to make a payment</faultstring><detail><ns3:FaultMessage xmlns:ns3="http://svcs.paypal.com/types/common" xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:15.368-07:00</timestamp><ack>Failure</ack><correlationId>f909d20966413</correlationId><build>1971792</build></responseEnvelope><error><errorId>580022</errorId><domain>PLATFORM</domain><subdomain>Application</subdomain><severity>Error</severity><category>Application</category><message>payKey AP-60C195849W973460W has already been used to make a payment</message><parameter>AP-60C195849W973460W</parameter></error></ns3:FaultMessage></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+12:05:15 07/25/11 caller [info] #####SOAP#####
+12:05:15 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PayRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <actionType>PAY</actionType>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255612361_per@gmail.com</email>
+        </receiver>
+        <receiver>
+            <amount>1.0</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+    <senderEmail>platfo_1255077030_biz@gmail.com</senderEmail>
+    <returnUrl>http://www.PayPal.com</returnUrl>
+</PayRequest></soap:Body>
+</soap:Envelope>
+
+12:05:27 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PayResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:27.919-07:00</timestamp><ack>Success</ack><correlationId>9ccc4b027020a</correlationId><build>1971792</build></responseEnvelope><payKey>AP-1ET798705G356290G</payKey><paymentExecStatus>COMPLETED</paymentExecStatus></ns2:PayResponse></soapenv:Body></soapenv:Envelope>
+12:05:27 07/25/11 caller [info] #####SOAP#####
+12:05:27 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PaymentDetailsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-1ET798705G356290G</payKey>
+</PaymentDetailsRequest></soap:Body>
+</soap:Envelope>
+
+12:05:34 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PaymentDetailsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:34.103-07:00</timestamp><ack>Success</ack><correlationId>1c959fee69e42</correlationId><build>1971792</build></responseEnvelope><cancelUrl>http://www.paypal.com</cancelUrl><currencyCode>USD</currencyCode><paymentInfoList><paymentInfo><transactionId>0EJ50630SR778731S</transactionId><transactionStatus>PENDING</transactionStatus><receiver><amount>1.00</amount><email>platfo_1255612361_per@gmail.com</email><primary>false</primary><paymentType>SERVICE</paymentType></receiver><refundedAmount>0.00</refundedAmount><pendingRefund>false</pendingRefund><senderTransactionId>9NC98076141615319</senderTransactionId><senderTransactionStatus>PENDING</senderTransactionStatus><pendingReason>ECHECK</pendingReason></paymentInfo><paymentInfo><transactionId>6AR96041VM844970U</transactionId><transactionStatus>PENDING</transactionStatus><receiver><amount>1.00</amount><email>platfo_1255611349_biz@gmail.com</email><primary>false</primary><paymentType>SERVICE</paymentType></receiver><refundedAmount>0.00</refundedAmount><pendingRefund>false</pendingRefund><senderTransactionId>2T746041DC8871945</senderTransactionId><senderTransactionStatus>PENDING</senderTransactionStatus><pendingReason>ECHECK</pendingReason></paymentInfo></paymentInfoList><returnUrl>http://www.PayPal.com</returnUrl><senderEmail>platfo_1255077030_biz@gmail.com</senderEmail><status>COMPLETED</status><payKey>AP-1ET798705G356290G</payKey><actionType>PAY</actionType><feesPayer>EACHRECEIVER</feesPayer><reverseAllParallelPaymentsOnError>false</reverseAllParallelPaymentsOnError><sender><email>platfo_1255077030_biz@gmail.com</email><useCredentials>false</useCredentials></sender></ns2:PaymentDetailsResponse></soapenv:Body></soapenv:Envelope>
+12:05:34 07/25/11 caller [info] #####SOAP#####
+12:05:34 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><RefundRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <currencyCode>USD</currencyCode>
+    <payKey>AP-1ET798705G356290G</payKey>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+</RefundRequest></soap:Body>
+</soap:Envelope>
+
+12:05:38 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:RefundResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:38.469-07:00</timestamp><ack>Success</ack><correlationId>c379e04e6b768</correlationId><build>1971792</build></responseEnvelope><currencyCode>USD</currencyCode><refundInfoList><refundInfo><receiver><amount>1.00</amount><email>platfo_1255611349_biz@gmail.com</email></receiver><refundStatus>NO_API_ACCESS_TO_RECEIVER</refundStatus></refundInfo></refundInfoList></ns2:RefundResponse></soapenv:Body></soapenv:Envelope>
+12:05:38 07/25/11 caller [info] #####SOAP#####
+12:05:38 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PreapprovalRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <endingDate>2011-08-25</endingDate>
+    <maxNumberOfPayments>10</maxNumberOfPayments>
+    <maxTotalAmountOfAllPayments>50.00</maxTotalAmountOfAllPayments>
+    <returnUrl>http://www.paypal.com</returnUrl>
+    <senderEmail>platfo_1255076101_per@gmail.com</senderEmail>
+    <startingDate>2011-07-25</startingDate>
+</PreapprovalRequest></soap:Body>
+</soap:Envelope>
+
+12:05:40 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PreapprovalResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:40.334-07:00</timestamp><ack>Success</ack><correlationId>65cc2bbc75a68</correlationId><build>1971792</build></responseEnvelope><preapprovalKey>PA-1YA222658U042983N</preapprovalKey></ns2:PreapprovalResponse></soapenv:Body></soapenv:Envelope>
+12:05:40 07/25/11 caller [info] #####SOAP#####
+12:05:40 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PreapprovalDetailsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <preapprovalKey>PA-1YA222658U042983N</preapprovalKey>
+</PreapprovalDetailsRequest></soap:Body>
+</soap:Envelope>
+
+12:05:42 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PreapprovalDetailsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:41.996-07:00</timestamp><ack>Success</ack><correlationId>9af5b7017619f</correlationId><build>1971792</build></responseEnvelope><approved>false</approved><cancelUrl>http://www.paypal.com</cancelUrl><curPayments>0</curPayments><curPaymentsAmount>0.00</curPaymentsAmount><curPeriodAttempts>0</curPeriodAttempts><currencyCode>USD</currencyCode><dateOfMonth>0</dateOfMonth><dayOfWeek>NO_DAY_SPECIFIED</dayOfWeek><endingDate>2011-08-25T23:59:39.000-07:00</endingDate><maxNumberOfPayments>10</maxNumberOfPayments><maxTotalAmountOfAllPayments>50.00</maxTotalAmountOfAllPayments><paymentPeriod>NO_PERIOD_SPECIFIED</paymentPeriod><pinType>NOT_REQUIRED</pinType><returnUrl>http://www.paypal.com</returnUrl><senderEmail>platfo_1255076101_per@gmail.com</senderEmail><startingDate>2011-07-25T00:00:39.000-07:00</startingDate><status>ACTIVE</status><displayMaxTotalAmount>false</displayMaxTotalAmount></ns2:PreapprovalDetailsResponse></soapenv:Body></soapenv:Envelope>
+12:05:42 07/25/11 caller [info] #####SOAP#####
+12:05:42 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CancelPreapprovalRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <preapprovalKey>PA-1YA222658U042983N</preapprovalKey>
+</CancelPreapprovalRequest></soap:Body>
+</soap:Envelope>
+
+12:05:43 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:CancelPreapprovalResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:43.909-07:00</timestamp><ack>Success</ack><correlationId>c25b9a9876925</correlationId><build>1971792</build></responseEnvelope></ns2:CancelPreapprovalResponse></soapenv:Body></soapenv:Envelope>
+12:05:43 07/25/11 caller [info] #####SOAP#####
+12:05:43 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><ConvertCurrencyRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <baseAmountList>
+        <currency>
+            <code>GBP</code>
+            <amount>1.00</amount>
+        </currency>
+        <currency>
+            <code>EUR</code>
+            <amount>100.00</amount>
+        </currency>
+    </baseAmountList>
+    <convertToCurrencyList>
+        <currencyCode>USD</currencyCode>
+        <currencyCode>CAD</currencyCode>
+        <currencyCode>JPY</currencyCode>
+    </convertToCurrencyList>
+</ConvertCurrencyRequest></soap:Body>
+</soap:Envelope>
+
+12:05:46 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:ConvertCurrencyResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:05:45.872-07:00</timestamp><ack>Success</ack><correlationId>42a36c3c6dcb9</correlationId><build>1971792</build></responseEnvelope><estimatedAmountTable><currencyConversionList><baseAmount><code>GBP</code><amount>1.00</amount></baseAmount><currencyList><currency><code>USD</code><amount>1.94</amount></currency><currency><code>CAD</code><amount>2.17</amount></currency><currency><code>JPY</code><amount>231</amount></currency></currencyList></currencyConversionList><currencyConversionList><baseAmount><code>EUR</code><amount>100.00</amount></baseAmount><currencyList><currency><code>USD</code><amount>132.88</amount></currency><currency><code>CAD</code><amount>147.93</amount></currency><currency><code>JPY</code><amount>15764</amount></currency></currencyList></currencyConversionList></estimatedAmountTable></ns2:ConvertCurrencyResponse></soapenv:Body></soapenv:Envelope>
+12:07:48 07/25/11 caller [info] #####SOAP#####
+12:07:48 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PayRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <actionType>CREATE</actionType>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255612361_per@gmail.com</email>
+        </receiver>
+        <receiver>
+            <amount>1.0</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+    <senderEmail>platfo_1255077030_biz@gmail.com</senderEmail>
+    <returnUrl>http://www.paypal.com</returnUrl>
+</PayRequest></soap:Body>
+</soap:Envelope>
+
+12:07:55 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PayResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:07:55.746-07:00</timestamp><ack>Success</ack><correlationId>4f3d17148c9db</correlationId><build>1971792</build></responseEnvelope><payKey>AP-4SD36417UV103424A</payKey><paymentExecStatus>CREATED</paymentExecStatus><defaultFundingPlan><fundingPlanId>0</fundingPlanId><fundingAmount><code>USD</code><amount>2.00</amount></fundingAmount><charge><charge><code>USD</code><amount>17.00</amount></charge><fundingSource><lastFourOfAccountNumber>4228</lastFourOfAccountNumber><type>BANK_DELAYED</type></fundingSource></charge></defaultFundingPlan></ns2:PayResponse></soapenv:Body></soapenv:Envelope>
+12:07:55 07/25/11 caller [info] #####SOAP#####
+12:07:55 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><SetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-4SD36417UV103424A</payKey>
+</SetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+12:07:57 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:SetPaymentOptionsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:07:58.022-07:00</timestamp><ack>Success</ack><correlationId>13d8577397313</correlationId><build>1971792</build></responseEnvelope></ns2:SetPaymentOptionsResponse></soapenv:Body></soapenv:Envelope>
+12:07:57 07/25/11 caller [info] #####SOAP#####
+12:07:57 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><ExecutePaymentRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-4SD36417UV103424A</payKey>
+</ExecutePaymentRequest></soap:Body>
+</soap:Envelope>
+
+12:08:06 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:ExecutePaymentResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:08:06.516-07:00</timestamp><ack>Success</ack><correlationId>ba85acb497bdf</correlationId><build>1971792</build></responseEnvelope><paymentExecStatus>COMPLETED</paymentExecStatus></ns2:ExecutePaymentResponse></soapenv:Body></soapenv:Envelope>
+12:08:06 07/25/11 caller [info] #####SOAP#####
+12:08:06 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-4SD36417UV103424A</payKey>
+</GetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+12:08:08 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:GetPaymentOptionsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:08:08.584-07:00</timestamp><ack>Success</ack><correlationId>43d7fdca90a46</correlationId><build>1971792</build></responseEnvelope></ns2:GetPaymentOptionsResponse></soapenv:Body></soapenv:Envelope>
+12:08:08 07/25/11 caller [info] #####SOAP#####
+12:08:08 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-4SD36417UV103424A</payKey>
+</GetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+12:08:12 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><soapenv:Fault xmlns:axis2ns323607="http://schemas.xmlsoap.org/soap/envelope/"><faultcode>axis2ns323607:Server</faultcode><faultstring>payKey AP-4SD36417UV103424A has already been used to make a payment</faultstring><detail><ns3:FaultMessage xmlns:ns3="http://svcs.paypal.com/types/common" xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:08:12.025-07:00</timestamp><ack>Failure</ack><correlationId>3209f606916f8</correlationId><build>1971792</build></responseEnvelope><error><errorId>580022</errorId><domain>PLATFORM</domain><subdomain>Application</subdomain><severity>Error</severity><category>Application</category><message>payKey AP-4SD36417UV103424A has already been used to make a payment</message><parameter>AP-4SD36417UV103424A</parameter></error></ns3:FaultMessage></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+12:08:12 07/25/11 caller [info] #####SOAP#####
+12:08:12 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PayRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <actionType>PAY</actionType>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255612361_per@gmail.com</email>
+        </receiver>
+        <receiver>
+            <amount>1.0</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+    <senderEmail>platfo_1255077030_biz@gmail.com</senderEmail>
+    <returnUrl>http://www.PayPal.com</returnUrl>
+</PayRequest></soap:Body>
+</soap:Envelope>
+
+12:08:23 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PayResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:08:23.838-07:00</timestamp><ack>Success</ack><correlationId>0655d1fc9b4b0</correlationId><build>1971792</build></responseEnvelope><payKey>AP-3L1655658A0695625</payKey><paymentExecStatus>COMPLETED</paymentExecStatus></ns2:PayResponse></soapenv:Body></soapenv:Envelope>
+12:08:23 07/25/11 caller [info] #####SOAP#####
+12:08:23 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PaymentDetailsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-3L1655658A0695625</payKey>
+</PaymentDetailsRequest></soap:Body>
+</soap:Envelope>
+
+12:08:31 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PaymentDetailsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:08:31.404-07:00</timestamp><ack>Success</ack><correlationId>a4a4994995460</correlationId><build>1971792</build></responseEnvelope><cancelUrl>http://www.paypal.com</cancelUrl><currencyCode>USD</currencyCode><paymentInfoList><paymentInfo><transactionId>9BB046885J195263Y</transactionId><transactionStatus>PENDING</transactionStatus><receiver><amount>1.00</amount><email>platfo_1255612361_per@gmail.com</email><primary>false</primary><paymentType>SERVICE</paymentType></receiver><refundedAmount>0.00</refundedAmount><pendingRefund>false</pendingRefund><senderTransactionId>8EK8367102457020A</senderTransactionId><senderTransactionStatus>PENDING</senderTransactionStatus><pendingReason>ECHECK</pendingReason></paymentInfo><paymentInfo><transactionId>7ER148727R6156305</transactionId><transactionStatus>PENDING</transactionStatus><receiver><amount>1.00</amount><email>platfo_1255611349_biz@gmail.com</email><primary>false</primary><paymentType>SERVICE</paymentType></receiver><refundedAmount>0.00</refundedAmount><pendingRefund>false</pendingRefund><senderTransactionId>6WN620044X754400Y</senderTransactionId><senderTransactionStatus>PENDING</senderTransactionStatus><pendingReason>ECHECK</pendingReason></paymentInfo></paymentInfoList><returnUrl>http://www.PayPal.com</returnUrl><senderEmail>platfo_1255077030_biz@gmail.com</senderEmail><status>COMPLETED</status><payKey>AP-3L1655658A0695625</payKey><actionType>PAY</actionType><feesPayer>EACHRECEIVER</feesPayer><reverseAllParallelPaymentsOnError>false</reverseAllParallelPaymentsOnError><sender><email>platfo_1255077030_biz@gmail.com</email><useCredentials>false</useCredentials></sender></ns2:PaymentDetailsResponse></soapenv:Body></soapenv:Envelope>
+12:08:31 07/25/11 caller [info] #####SOAP#####
+12:08:31 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><RefundRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <currencyCode>USD</currencyCode>
+    <payKey>AP-3L1655658A0695625</payKey>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+</RefundRequest></soap:Body>
+</soap:Envelope>
+
+12:08:35 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:RefundResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:08:35.823-07:00</timestamp><ack>Success</ack><correlationId>1188f5949ff77</correlationId><build>1971792</build></responseEnvelope><currencyCode>USD</currencyCode><refundInfoList><refundInfo><receiver><amount>1.00</amount><email>platfo_1255611349_biz@gmail.com</email></receiver><refundStatus>NO_API_ACCESS_TO_RECEIVER</refundStatus></refundInfo></refundInfoList></ns2:RefundResponse></soapenv:Body></soapenv:Envelope>
+12:08:35 07/25/11 caller [info] #####SOAP#####
+12:08:35 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PreapprovalRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <endingDate>2011-08-25</endingDate>
+    <maxNumberOfPayments>10</maxNumberOfPayments>
+    <maxTotalAmountOfAllPayments>50.00</maxTotalAmountOfAllPayments>
+    <returnUrl>http://www.paypal.com</returnUrl>
+    <senderEmail>platfo_1255076101_per@gmail.com</senderEmail>
+    <startingDate>2011-07-25</startingDate>
+</PreapprovalRequest></soap:Body>
+</soap:Envelope>
+
+12:08:39 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PreapprovalResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:08:39.137-07:00</timestamp><ack>Success</ack><correlationId>b6cf0436a1577</correlationId><build>1971792</build></responseEnvelope><preapprovalKey>PA-0VW7627832338934U</preapprovalKey></ns2:PreapprovalResponse></soapenv:Body></soapenv:Envelope>
+12:08:39 07/25/11 caller [info] #####SOAP#####
+12:08:39 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PreapprovalDetailsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <preapprovalKey>PA-0VW7627832338934U</preapprovalKey>
+</PreapprovalDetailsRequest></soap:Body>
+</soap:Envelope>
+
+12:08:40 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PreapprovalDetailsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:08:40.804-07:00</timestamp><ack>Success</ack><correlationId>9b0b06caa1cac</correlationId><build>1971792</build></responseEnvelope><approved>false</approved><cancelUrl>http://www.paypal.com</cancelUrl><curPayments>0</curPayments><curPaymentsAmount>0.00</curPaymentsAmount><curPeriodAttempts>0</curPeriodAttempts><currencyCode>USD</currencyCode><dateOfMonth>0</dateOfMonth><dayOfWeek>NO_DAY_SPECIFIED</dayOfWeek><endingDate>2011-08-25T23:59:38.000-07:00</endingDate><maxNumberOfPayments>10</maxNumberOfPayments><maxTotalAmountOfAllPayments>50.00</maxTotalAmountOfAllPayments><paymentPeriod>NO_PERIOD_SPECIFIED</paymentPeriod><pinType>NOT_REQUIRED</pinType><returnUrl>http://www.paypal.com</returnUrl><senderEmail>platfo_1255076101_per@gmail.com</senderEmail><startingDate>2011-07-25T00:00:38.000-07:00</startingDate><status>ACTIVE</status><displayMaxTotalAmount>false</displayMaxTotalAmount></ns2:PreapprovalDetailsResponse></soapenv:Body></soapenv:Envelope>
+12:08:40 07/25/11 caller [info] #####SOAP#####
+12:08:40 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CancelPreapprovalRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <preapprovalKey>PA-0VW7627832338934U</preapprovalKey>
+</CancelPreapprovalRequest></soap:Body>
+</soap:Envelope>
+
+12:08:46 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:CancelPreapprovalResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:08:46.237-07:00</timestamp><ack>Success</ack><correlationId>0a13fd6c99f28</correlationId><build>1971792</build></responseEnvelope></ns2:CancelPreapprovalResponse></soapenv:Body></soapenv:Envelope>
+12:08:46 07/25/11 caller [info] #####SOAP#####
+12:08:46 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><ConvertCurrencyRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <baseAmountList>
+        <currency>
+            <code>GBP</code>
+            <amount>1.00</amount>
+        </currency>
+        <currency>
+            <code>EUR</code>
+            <amount>100.00</amount>
+        </currency>
+    </baseAmountList>
+    <convertToCurrencyList>
+        <currencyCode>USD</currencyCode>
+        <currencyCode>CAD</currencyCode>
+        <currencyCode>JPY</currencyCode>
+    </convertToCurrencyList>
+</ConvertCurrencyRequest></soap:Body>
+</soap:Envelope>
+
+12:08:48 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:ConvertCurrencyResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:08:48.301-07:00</timestamp><ack>Success</ack><correlationId>ad7937a2a3862</correlationId><build>1971792</build></responseEnvelope><estimatedAmountTable><currencyConversionList><baseAmount><code>GBP</code><amount>1.00</amount></baseAmount><currencyList><currency><code>USD</code><amount>1.94</amount></currency><currency><code>CAD</code><amount>2.17</amount></currency><currency><code>JPY</code><amount>231</amount></currency></currencyList></currencyConversionList><currencyConversionList><baseAmount><code>EUR</code><amount>100.00</amount></baseAmount><currencyList><currency><code>USD</code><amount>132.88</amount></currency><currency><code>CAD</code><amount>147.93</amount></currency><currency><code>JPY</code><amount>15764</amount></currency></currencyList></currencyConversionList></estimatedAmountTable></ns2:ConvertCurrencyResponse></soapenv:Body></soapenv:Envelope>
+12:10:03 07/25/11 caller [info] #####SOAP#####
+12:10:03 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PayRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <actionType>CREATE</actionType>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255612361_per@gmail.com</email>
+        </receiver>
+        <receiver>
+            <amount>1.0</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+    <senderEmail>platfo_1255077030_biz@gmail.com</senderEmail>
+    <returnUrl>http://www.paypal.com</returnUrl>
+</PayRequest></soap:Body>
+</soap:Envelope>
+
+12:10:11 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PayResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:11.557-07:00</timestamp><ack>Success</ack><correlationId>6ffca9d6adc40</correlationId><build>1971792</build></responseEnvelope><payKey>AP-9G606798WE098491Y</payKey><paymentExecStatus>CREATED</paymentExecStatus><defaultFundingPlan><fundingPlanId>0</fundingPlanId><fundingAmount><code>USD</code><amount>2.00</amount></fundingAmount><charge><charge><code>USD</code><amount>17.00</amount></charge><fundingSource><lastFourOfAccountNumber>4228</lastFourOfAccountNumber><type>BANK_DELAYED</type></fundingSource></charge></defaultFundingPlan></ns2:PayResponse></soapenv:Body></soapenv:Envelope>
+12:10:11 07/25/11 caller [info] #####SOAP#####
+12:10:11 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-9G606798WE098491Y</payKey>
+</GetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+12:10:14 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:GetFundingPlansResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:13.877-07:00</timestamp><ack>Success</ack><correlationId>bf41c739af2cb</correlationId><build>1971792</build></responseEnvelope><fundingPlan><fundingPlanId>0</fundingPlanId><fundingAmount><code>USD</code><amount>2.00</amount></fundingAmount><charge><charge><code>USD</code><amount>17.00</amount></charge><fundingSource><lastFourOfAccountNumber>4228</lastFourOfAccountNumber><type>BANK_DELAYED</type></fundingSource></charge></fundingPlan><fundingPlan><fundingPlanId>1</fundingPlanId><fundingAmount><code>USD</code><amount>2.00</amount></fundingAmount><charge><charge><code>USD</code><amount>17.00</amount></charge><fundingSource><lastFourOfAccountNumber>1128</lastFourOfAccountNumber><type>CREDITCARD</type></fundingSource></charge></fundingPlan></ns2:GetFundingPlansResponse></soapenv:Body></soapenv:Envelope>
+12:10:14 07/25/11 caller [info] #####SOAP#####
+12:10:14 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><SetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-9G606798WE098491Y</payKey>
+</SetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+12:10:16 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:SetPaymentOptionsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:16.418-07:00</timestamp><ack>Success</ack><correlationId>c67f4986afcce</correlationId><build>1971792</build></responseEnvelope></ns2:SetPaymentOptionsResponse></soapenv:Body></soapenv:Envelope>
+12:10:16 07/25/11 caller [info] #####SOAP#####
+12:10:16 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><ExecutePaymentRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-9G606798WE098491Y</payKey>
+</ExecutePaymentRequest></soap:Body>
+</soap:Envelope>
+
+12:10:26 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:ExecutePaymentResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:25.190-07:00</timestamp><ack>Success</ack><correlationId>a33b92cbb98d4</correlationId><build>1971792</build></responseEnvelope><paymentExecStatus>COMPLETED</paymentExecStatus></ns2:ExecutePaymentResponse></soapenv:Body></soapenv:Envelope>
+12:10:26 07/25/11 caller [info] #####SOAP#####
+12:10:26 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><GetPaymentOptionsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-9G606798WE098491Y</payKey>
+</GetPaymentOptionsRequest></soap:Body>
+</soap:Envelope>
+
+12:10:28 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:GetPaymentOptionsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:28.657-07:00</timestamp><ack>Success</ack><correlationId>dca3ec12bbfcf</correlationId><build>1971792</build></responseEnvelope></ns2:GetPaymentOptionsResponse></soapenv:Body></soapenv:Envelope>
+12:10:28 07/25/11 caller [info] #####SOAP#####
+12:10:28 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PayRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <actionType>PAY</actionType>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255612361_per@gmail.com</email>
+        </receiver>
+        <receiver>
+            <amount>1.0</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+    <senderEmail>platfo_1255077030_biz@gmail.com</senderEmail>
+    <returnUrl>http://www.PayPal.com</returnUrl>
+</PayRequest></soap:Body>
+</soap:Envelope>
+
+12:10:40 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PayResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:40.321-07:00</timestamp><ack>Success</ack><correlationId>ea2390b6b369f</correlationId><build>1971792</build></responseEnvelope><payKey>AP-1YW033667Y065081X</payKey><paymentExecStatus>COMPLETED</paymentExecStatus></ns2:PayResponse></soapenv:Body></soapenv:Envelope>
+12:10:40 07/25/11 caller [info] #####SOAP#####
+12:10:40 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PaymentDetailsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <payKey>AP-1YW033667Y065081X</payKey>
+</PaymentDetailsRequest></soap:Body>
+</soap:Envelope>
+
+12:10:46 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PaymentDetailsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:46.409-07:00</timestamp><ack>Success</ack><correlationId>d9d1a976bf645</correlationId><build>1971792</build></responseEnvelope><cancelUrl>http://www.paypal.com</cancelUrl><currencyCode>USD</currencyCode><paymentInfoList><paymentInfo><transactionId>94F780855K5528411</transactionId><transactionStatus>PENDING</transactionStatus><receiver><amount>1.00</amount><email>platfo_1255612361_per@gmail.com</email><primary>false</primary><paymentType>SERVICE</paymentType></receiver><refundedAmount>0.00</refundedAmount><pendingRefund>false</pendingRefund><senderTransactionId>3U947791EA253023P</senderTransactionId><senderTransactionStatus>PENDING</senderTransactionStatus><pendingReason>ECHECK</pendingReason></paymentInfo><paymentInfo><transactionId>2BM655896R7219351</transactionId><transactionStatus>PENDING</transactionStatus><receiver><amount>1.00</amount><email>platfo_1255611349_biz@gmail.com</email><primary>false</primary><paymentType>SERVICE</paymentType></receiver><refundedAmount>0.00</refundedAmount><pendingRefund>false</pendingRefund><senderTransactionId>4JU39741PT873190P</senderTransactionId><senderTransactionStatus>PENDING</senderTransactionStatus><pendingReason>ECHECK</pendingReason></paymentInfo></paymentInfoList><returnUrl>http://www.PayPal.com</returnUrl><senderEmail>platfo_1255077030_biz@gmail.com</senderEmail><status>COMPLETED</status><payKey>AP-1YW033667Y065081X</payKey><actionType>PAY</actionType><feesPayer>EACHRECEIVER</feesPayer><reverseAllParallelPaymentsOnError>false</reverseAllParallelPaymentsOnError><sender><email>platfo_1255077030_biz@gmail.com</email><useCredentials>false</useCredentials></sender></ns2:PaymentDetailsResponse></soapenv:Body></soapenv:Envelope>
+12:10:46 07/25/11 caller [info] #####SOAP#####
+12:10:46 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><RefundRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <currencyCode>USD</currencyCode>
+    <payKey>AP-1YW033667Y065081X</payKey>
+    <receiverList>
+        <receiver>
+            <amount>1.00</amount>
+            <email>platfo_1255611349_biz@gmail.com</email>
+        </receiver>
+    </receiverList>
+</RefundRequest></soap:Body>
+</soap:Envelope>
+
+12:10:50 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:RefundResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:50.743-07:00</timestamp><ack>Success</ack><correlationId>f1c5edaec0eff</correlationId><build>1971792</build></responseEnvelope><currencyCode>USD</currencyCode><refundInfoList><refundInfo><receiver><amount>1.00</amount><email>platfo_1255611349_biz@gmail.com</email></receiver><refundStatus>NO_API_ACCESS_TO_RECEIVER</refundStatus></refundInfo></refundInfoList></ns2:RefundResponse></soapenv:Body></soapenv:Envelope>
+12:10:50 07/25/11 caller [info] #####SOAP#####
+12:10:50 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PreapprovalRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <clientDetails>
+        <ipAddress>127.0.0.1</ipAddress>
+        <deviceId>PayPal_PHP_SDK</deviceId>
+        <applicationId>APP-80W284485P519543T</applicationId>
+    </clientDetails>
+    <cancelUrl>http://www.paypal.com</cancelUrl>
+    <currencyCode>USD</currencyCode>
+    <endingDate>2011-08-25</endingDate>
+    <maxNumberOfPayments>10</maxNumberOfPayments>
+    <maxTotalAmountOfAllPayments>50.00</maxTotalAmountOfAllPayments>
+    <returnUrl>http://www.paypal.com</returnUrl>
+    <senderEmail>platfo_1255076101_per@gmail.com</senderEmail>
+    <startingDate>2011-07-25</startingDate>
+</PreapprovalRequest></soap:Body>
+</soap:Envelope>
+
+12:10:52 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PreapprovalResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:52.554-07:00</timestamp><ack>Success</ack><correlationId>9012db31b8c0e</correlationId><build>1971792</build></responseEnvelope><preapprovalKey>PA-2FL02526NN901813H</preapprovalKey></ns2:PreapprovalResponse></soapenv:Body></soapenv:Envelope>
+12:10:52 07/25/11 caller [info] #####SOAP#####
+12:10:52 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><PreapprovalDetailsRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <preapprovalKey>PA-2FL02526NN901813H</preapprovalKey>
+</PreapprovalDetailsRequest></soap:Body>
+</soap:Envelope>
+
+12:10:54 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:PreapprovalDetailsResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:54.219-07:00</timestamp><ack>Success</ack><correlationId>c3ca95d1c261c</correlationId><build>1971792</build></responseEnvelope><approved>false</approved><cancelUrl>http://www.paypal.com</cancelUrl><curPayments>0</curPayments><curPaymentsAmount>0.00</curPaymentsAmount><curPeriodAttempts>0</curPeriodAttempts><currencyCode>USD</currencyCode><dateOfMonth>0</dateOfMonth><dayOfWeek>NO_DAY_SPECIFIED</dayOfWeek><endingDate>2011-08-25T23:59:52.000-07:00</endingDate><maxNumberOfPayments>10</maxNumberOfPayments><maxTotalAmountOfAllPayments>50.00</maxTotalAmountOfAllPayments><paymentPeriod>NO_PERIOD_SPECIFIED</paymentPeriod><pinType>NOT_REQUIRED</pinType><returnUrl>http://www.paypal.com</returnUrl><senderEmail>platfo_1255076101_per@gmail.com</senderEmail><startingDate>2011-07-25T00:00:52.000-07:00</startingDate><status>ACTIVE</status><displayMaxTotalAmount>false</displayMaxTotalAmount></ns2:PreapprovalDetailsResponse></soapenv:Body></soapenv:Envelope>
+12:10:54 07/25/11 caller [info] #####SOAP#####
+12:10:54 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><CancelPreapprovalRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <preapprovalKey>PA-2FL02526NN901813H</preapprovalKey>
+</CancelPreapprovalRequest></soap:Body>
+</soap:Envelope>
+
+12:10:56 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:CancelPreapprovalResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:56.092-07:00</timestamp><ack>Success</ack><correlationId>10a5bbd3c2d9e</correlationId><build>1971792</build></responseEnvelope></ns2:CancelPreapprovalResponse></soapenv:Body></soapenv:Envelope>
+12:10:56 07/25/11 caller [info] #####SOAP#####
+12:10:56 07/25/11 caller [info] request: 
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+ <soap:Body><ConvertCurrencyRequest>
+    <requestEnvelope>
+        <errorLanguage>en_US</errorLanguage>
+    </requestEnvelope>
+    <baseAmountList>
+        <currency>
+            <code>GBP</code>
+            <amount>1.00</amount>
+        </currency>
+        <currency>
+            <code>EUR</code>
+            <amount>100.00</amount>
+        </currency>
+    </baseAmountList>
+    <convertToCurrencyList>
+        <currencyCode>USD</currencyCode>
+        <currencyCode>CAD</currencyCode>
+        <currencyCode>JPY</currencyCode>
+    </convertToCurrencyList>
+</ConvertCurrencyRequest></soap:Body>
+</soap:Envelope>
+
+12:10:58 07/25/11 caller [info] response: <?xml version='1.0' encoding='utf-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"><soapenv:Header/><soapenv:Body><ns2:ConvertCurrencyResponse xmlns:ns2="http://svcs.paypal.com/types/ap"><responseEnvelope><timestamp>2011-07-25T05:10:58.207-07:00</timestamp><ack>Success</ack><correlationId>c3d4e59aba0f4</correlationId><build>1971792</build></responseEnvelope><estimatedAmountTable><currencyConversionList><baseAmount><code>GBP</code><amount>1.00</amount></baseAmount><currencyList><currency><code>USD</code><amount>1.94</amount></currency><currency><code>CAD</code><amount>2.17</amount></currency><currency><code>JPY</code><amount>231</amount></currency></currencyList></currencyConversionList><currencyConversionList><baseAmount><code>EUR</code><amount>100.00</amount></baseAmount><currencyList><currency><code>USD</code><amount>132.88</amount></currency><currency><code>CAD</code><amount>147.93</amount></currency><currency><code>JPY</code><amount>15764</amount></currency></currencyList></currencyConversionList></estimatedAmountTable></ns2:ConvertCurrencyResponse></soapenv:Body></soapenv:Envelope>

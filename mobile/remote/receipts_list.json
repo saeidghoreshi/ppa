@@ -1,0 +1,59 @@
+{ 
+     "receipts": [
+    {
+        "id": 1,
+        "cost": 4.88,
+        "time": "9:36am 04-04-10",
+        "vendor": {
+            "name": "Prado Cafe",
+            "address": "1931 Commercial Dr Vancouver"
+        }
+    },
+    {
+
+     "id": 2,
+        "cost": 7.50,
+        "time": "9:36am 04-04-10",
+        "vendor": {
+             "name": "SeaMonstr Sushi",
+            "address": "1931 Powell St Vancouver"
+        }
+    },
+    {
+        "id": 3,
+        "cost": 23.66,
+        "time": "9:36am 04-04-10",
+        "vendor": {
+            "name": "Prado Cafe",
+            "address": "1931 Commercial Dr Vancouver"
+        }
+    },
+    {
+        "id": 4,
+        "cost": 6.76,
+        "time": "9:36am 04-04-10",
+        "vendor": {
+            "name": "Prado Cafe",
+            "address": "1931 Commercial Dr Vancouver"
+        }
+    },
+    {
+        "id": 5,
+        "cost": 44.62,
+        "time": "9:36am 04-04-10",
+        "vendor": {
+            "name": "Prado Cafe",
+            "address": "1931 Commercial Dr Vancouver"
+        }
+    },
+    {
+        "id": 6,
+        "cost": 4.55,
+        "time": "9:36am 04-04-10",
+        "vendor": {
+            "name": "Prado Cafe",
+            "address": "1931 Commercial Dr Vancouver"
+        }
+    }
+    ]
+}

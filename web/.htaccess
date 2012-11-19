@@ -1,0 +1,9 @@
+#
+php_value session.gc_maxlifetime 43200
+#
+RewriteEngine on
+RewriteRule ^$ /index.php [L]
+RewriteRule ^merchant/?$ index.php [L]
+RewriteCond $1 !^(t\.php|session\.php|index\.php|signup\.html|index\.html|css|images|robots\.txt|env|fonts|js|queue|A3u3fYA\.html|L3X5d3C\.html|m/|m2/|demo/)
+#RewriteCond $1 !^(css|images|robots\.txt|env|fonts|js|queue)
+RewriteRule ^(.*)$ index.php/$1 [L]

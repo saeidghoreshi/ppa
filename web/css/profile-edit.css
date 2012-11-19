@@ -1,0 +1,26 @@
+.custom_report .linline { padding-left: 50px; }
+
+div.profile_info h2 { color: #44c7f5; font-size: 12px; font-weight: bold; letter-spacing: -1px; padding: 2px 0 2px 90px; text-transform: uppercase; }
+div.profile_info h3 { color: #44c7f5; font-size: 40px; letter-spacing: -1px; line-height: 30px; padding: 10px 0 10px 90px; text-transform: uppercase; }
+div.profile_info h3 small { font-size: 50%; }
+
+table.profile_info { width: 100%; }
+table.profile_info td { line-height: 36px; color: #666666; font-family: 'Helvetica Neue', Arial, Tahoma, sans-serif; font-size: 110%; padding: 0; text-align: left; padding-bottom: 1em; }
+table.profile_info td.right { line-height: 36px; color: #999999; font-family: 'Rockwell', Arial, Tahoma, sans-serif; font-size: 120%; text-align: right; width: 220px; padding: 0; padding-bottom: 1em; padding-right: 15px; vertical-align: top; }
+
+table.profile_info .dotted_line td { background: url(../images/trans_dotted_line.gif) repeat-x 0 50%; font-size: 0; line-height: 0; height: 20px; }
+
+table.profile_info select { -webkit-border-radius: 3px; -moz-border-radius: 5px; border-radius: 3px; -moz-box-shadow: -4px 4px 15px #999999; -webkit-box-shadow: 5px 5px 15px #999999; box-shadow: 5px 5px 15px #999999; background: #ffffff; border: 1px solid #a7a9ac; color: #232323; height: 33px; line-height: 33px; padding: 5px 2px; width: 186px; }
+table.profile_info select:focus { border: 1px solid #5189dd; }
+table.profile_info select.error { border: 1px solid #ec3957; }
+table.profile_info option { }
+
+/*table.profile_info input { -webkit-border-radius: 3px; -moz-border-radius: 5px; border-radius: 3px; -moz-box-shadow: -4px 4px 15px #999999; -webkit-box-shadow: 5px 5px 15px #999999; box-shadow: 5px 5px 15px #999999; background: #ffffff; border: 1px solid #a7a9ac; color: #232323; height: 20px; line-height: 20px; padding: 5px 2px; width: 180px; }*/
+table.profile_info input:focus { border: 1px solid #5189dd; }
+table.profile_info input.error { border: 1px solid #ec3957; }
+table.profile_info .use_profile td { padding: 0 10px !important; }
+
+.select select { width: 60px !important; }
+
+.actions { text-align: right; }
+.custom_button a:hover { text-decoration: none; }

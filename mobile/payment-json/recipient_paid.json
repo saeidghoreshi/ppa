@@ -1,0 +1,18 @@
+{
+    "transaction_id":1301775096,
+    "sender_id":"321",
+    "recepient_received":true,
+    "sender_notified":false,
+    "recepient_cancelled":false,
+    "sender_cancelled":false,
+    "db_saved":false,
+    "msg_type":"PR",
+    "recepient_paid":true,
+    "amount":12.34,
+    "tips":1.23,
+    "sender_location":true,
+    "recepient_location":true,
+    "parameters":null,
+    "status":true,
+    "msg":"OK"
+}

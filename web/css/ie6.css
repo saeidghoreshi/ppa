@@ -1,0 +1,41 @@
+body {
+	background: #b6e2f5;
+}
+
+div.login img {
+	display: none;
+}
+
+div.login img.ie6-image {
+	display: block;
+	padding-bottom: 20px;
+}
+
+div.login input {
+	padding: 5px;
+	display: block;
+	margin-bottom: 10px;
+	border: 1px solid #a7a8d3;
+}
+
+input {
+	padding: 5px;
+	display: block;
+	border: 1px solid #a7a8d3;
+}
+
+.submit, #signup-link {
+	float: left;
+}
+
+#h_navigation span.i b {
+	font-family: 'Helvetica Neue Condensed Bold';
+}
+
+h1#logo-merch {
+	background: #b6e2f5 url('../images/logo_merch_gradient.png');
+}
+
+#h_navigation span.i b {
+    font-size: 95%;
+}

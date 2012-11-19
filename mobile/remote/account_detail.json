@@ -1,0 +1,13 @@
+{
+    "id": 4,
+    "nickname": "My Visa",
+    "type": "VISA",
+    "number": "4510 5645 4510 ****",
+    "expiry": "04/13",
+    "status": "Verified",
+    "last_activity": {
+        "cost": 54.55,
+        "date": "Jan 10 2011"
+    },
+    "available": 1235.56
+}

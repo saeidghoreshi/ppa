@@ -1,0 +1,49 @@
+{
+    "accounts": [
+        {
+            "id": 1,
+            "nickname": "My Visa",
+            "last_activity": {
+                "cost": 4.55,
+                "date": "Jan 10 2011"
+            },
+            "available": 1235.56
+        },
+        {
+            "id": 2,
+            "nickname": "My Mastercard",
+            "last_activity": {
+                "cost": 4.55,
+                "date": "Jan 10 2011"
+            },
+            "available": 1235.56
+        },
+        {
+            "id": 3,
+            "nickname": "My Amex",
+            "last_activity": {
+                "cost": 4.55,
+                "date": "Jan 10 2011"
+            },
+            "available": 1235.56
+        },
+        {
+            "id": 4,
+            "nickname": "My Chequing",
+            "last_activity": {
+                "cost": 54.55,
+                "date": "Jan 10 2011"
+            },
+            "available": 1235.56
+        },
+        {
+            "id": 5,
+            "nickname": "Company Visa",
+            "last_activity": {
+                "cost": 3.55,
+                "date": "Jan 01 2011"
+            },
+            "available": "****"
+        }
+    ]
+}

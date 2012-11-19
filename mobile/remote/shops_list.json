@@ -1,0 +1,34 @@
+{
+    "shops": [
+        {
+            "id": 1,
+            "name": "Prado Cafe",
+            "description": "Organic Espresso & Baked Goods",
+            "address": "1931 Commercial Dr Vancouver"
+        },
+        {
+            "id": 2,
+            "name": "Nouvelle Nouvelle",
+            "description": "Independent lines from Europe and North America",
+            "address": "209 Abbott St Vancouver"
+        },
+        {
+            "id": 3,
+            "name": "JD's Barbershop",
+            "description": "Fresh Cuts for Him and Her",
+            "address": "234 Abbott St Vancouver"
+        },
+        {
+            "id": 4,
+            "name": "Salt Tasting Room",
+            "description": "Meat, Cheese and Condiments",
+            "address": "37 Blood Alley Vancouver"
+        },
+        {
+            "id": 5,
+            "name": "Sea Monstr Sushi",
+            "description": "Destroying Hunger",
+            "address": "53 Powell St Vancouver"
+        }
+    ]
+}

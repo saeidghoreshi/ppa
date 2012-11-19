@@ -1,0 +1,13 @@
+{
+    "id": 1,
+    "name": "Prado Cafe",
+    "address-one": "1931 Commercial Dr",
+    "address-two": "Vancouver V5N 4A8",
+    "phone": "604 255 5527",
+    "website": "www.pradocafe.com",
+    "hours": [
+        "M-Sat 7-8",
+        "Sun 8-8"
+    ],
+    "description": "Organic Espresso & Baked Goods"
+}

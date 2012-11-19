@@ -1,0 +1,15 @@
+{
+    "firstname": "Andrew",
+    "lastname": "Lunny",
+    "dob": "1983-12-30",
+
+    "street": "RR-1415 Commercial Drive",
+    "city": "Vancouver",
+    "state": "British Columbia",
+    "zip": "V5N 3X8",
+    "country": "Canada",
+
+    "email": "andrew@payphoneapp.com",
+    "phone": "778-833-3573"
+}
+
