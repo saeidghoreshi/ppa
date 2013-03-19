@@ -37,10 +37,19 @@
 $active_group = "default";
 $active_record = TRUE;
 
+/*
 $db['default']['hostname'] = "localhost";
 $db['default']['username'] = "v2";
 $db['default']['password'] = "v2_goifjielg943";
 $db['default']['database'] = "v2";
+*/
+$db['default']['hostname'] = "localhost";
+$db['default']['username'] = "root";
+$db['default']['password'] = "root";
+$db['default']['database'] = "ppa";
+
+
+
 //$db['default']['username'] = "ppatestv2";
 //$db['default']['password'] = "ppatestv2_H54f3j";
 //$db['default']['database'] = "ppatestv2";
